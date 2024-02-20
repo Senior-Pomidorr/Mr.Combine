@@ -9,15 +9,34 @@ import Foundation
 import Combine
 
 class YourFirstPipeline: ObservableObject {
-    @Published var name: String = ""
-    @Published var validation: String = ""
-    var cancellable: AnyCancellable?
+    @Published var firstName: String = ""
+    @Published var secondName: String = ""
+    @Published var firstValidationName = ""
+    @Published var secondValidationName = ""
+    @Published var status: String = ""
+    private var cancellable: Set<AnyCancellable> = []
     
     init() {
-       _ = $name
-            .map { $0.isEmpty ? "no text" : "OK" }
+        $firstName
+            .map { $0.isEmpty ? "No name" : "Have name - OK!" }
             .sink { [unowned self] value in
-                self.validation = value
+                firstValidationName = value
             }
+            .store(in: &cancellable)
+        
+        $secondName
+            .map{ $0.isEmpty ? "No name": "Have name - OK!"}
+            .sink { [unowned self] value in
+                secondValidationName = value
+            }
+            .store(in: &cancellable)
+    }
+    
+//    func refreshData() {
+//        data = "Refreshed Data"
+//    }
+//    
+    func cancelAllValidations() {
+        cancellable.removeAll()
     }
 }

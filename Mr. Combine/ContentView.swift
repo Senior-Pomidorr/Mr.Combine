@@ -16,13 +16,20 @@ struct ContentView: View {
                        subtitle: "With Sink",
                        desc: "The validation is now being assigned using the sink subscriber.                               This allows you to cancel the subscription any time you would                               like.")
             HStack {
-                TextField("name", text: $vm.name)                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                Text(vm.validation)
+                TextField("name", text: $vm.firstName)                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                Text(vm.firstValidationName)
             }
             .padding()
-            Button("Cancel Subscription") {                
-                vm.validation = ""
-                vm.cancellable?.cancel()
+            
+            HStack {
+                TextField("last name", text: $vm.secondName)        .textFieldStyle(RoundedBorderTextFieldStyle())
+                Text(vm.secondValidationName)
+            }
+            .padding()
+            
+            Button("Cancel Subscription") {
+                vm.status = ""
+                vm.cancelAllValidations()
             }
         }
         .font(.title)

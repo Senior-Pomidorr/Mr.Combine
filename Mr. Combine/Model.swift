@@ -5,37 +5,36 @@
 //  Created by Daniil Kulikovskiy on 2/19/24.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 class YourFirstPipeline: ObservableObject {
-    @Published var firstName: String = ""
-    @Published var secondName: String = ""
-    @Published var firstValidationName = ""
-    @Published var secondValidationName = ""
-    @Published var status: String = ""
+    var characterLimit = 30
+    @Published var data = ""
+    @Published var count = 0
+    @Published var color = Color.gray
     private var cancellable: Set<AnyCancellable> = []
     
     init() {
-        $firstName
-            .map { $0.isEmpty ? "No name" : "Have name - OK!" }
-            .sink { [unowned self] value in
-                firstValidationName = value
-            }
-            .store(in: &cancellable)
+        $data
+            .map({ value -> Int in
+                return self.data.count
+            })
+            .assign(to: &$count)
         
-        $secondName
-            .map{ $0.isEmpty ? "No name": "Have name - OK!"}
-            .sink { [unowned self] value in
-                secondValidationName = value
-            }
-            .store(in: &cancellable)
+        $count
+            .map({ [unowned self] count -> Color in
+                let eightyPercent = Int(Double(characterLimit) * 0.8)
+                if (eightyPercent...self.characterLimit).contains(count) {
+                    return Color.yellow
+                } else if count > characterLimit {
+                    return Color.red
+                }
+                return Color.gray
+            })
+            .assign(to: &$color)
     }
     
-//    func refreshData() {
-//        data = "Refreshed Data"
-//    }
-//    
     func cancelAllValidations() {
         cancellable.removeAll()
     }

@@ -8,34 +8,24 @@
 import SwiftUI
 import Combine
 
-class YourFirstPipeline: ObservableObject {
-    var characterLimit = 30
-    @Published var data = ""
-    @Published var count = 0
-    @Published var color = Color.gray
-    private var cancellable: Set<AnyCancellable> = []
+class CurrentValueSubjectViewModel: ObservableObject {
+    var selection = CurrentValueSubject<String, Never>("No name selected")
+    var selectionSame = CurrentValueSubject<Bool, Never>(false)
+    var cancellable: [AnyCancellable] = []
     
     init() {
-        $data
-            .map({ value -> Int in
-                return self.data.count
-            })
-            .assign(to: &$count)
-        
-        $count
-            .map({ [unowned self] count -> Color in
-                let eightyPercent = Int(Double(characterLimit) * 0.8)
-                if (eightyPercent...self.characterLimit).contains(count) {
-                    return Color.yellow
-                } else if count > characterLimit {
-                    return Color.red
+        selection
+            .map { [unowned self] newValue -> Bool in
+                if newValue == selection.value {
+                    return true
+                } else {
+                    return false
                 }
-                return Color.gray
-            })
-            .assign(to: &$color)
-    }
-    
-    func cancelAllValidations() {
-        cancellable.removeAll()
+            }
+            .sink { [unowned self] value  in
+                selectionSame.value = value
+                objectWillChange.send()
+            }
+            .store(in: &cancellable)
     }
 }

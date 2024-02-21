@@ -9,16 +9,23 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-    @StateObject var vm = YourFirstPipeline()
+    @StateObject var vm = CurrentValueSubjectViewModel()
     var body: some View {
         VStack(spacing: 20) {
-            HeaderView("Published",
-                       subtitle: "Introduction",
-                       desc: "«The @Published property wrapper has a built-in publisher that you                              can access with the dollar sign ($).")
-            TextEditor(text: $vm.data)                .border(Color.gray, width: 1)                .frame(height: 200)
-                .padding()
+            HeaderView("CurrentValueSubject",
+                       subtitle: "Compared",
+                       desc: "Let's compare with @Published. The map operator will work now                               because the @Published property's value doesn't actually change                               until AFTER the pipeline has finished.")
             
-            Text("\(vm.count)/\(vm.characterLimit)")                .foregroundStyle(vm.color)
+            Button("Selected Lorenzo") {
+                vm.selection.send("Lorenzo")
+            }
+            
+            Button("Selected Elen") {
+                vm.selection.send("Elen")
+            }
+            
+            Text(vm.selection.value)
+                .foregroundStyle(vm.selectionSame.value ? .red : .green)
         }
         .font(.title)
         

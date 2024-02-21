@@ -17,14 +17,14 @@ struct ContentView: View {
                        desc: "Let's compare with @Published. The map operator will work now                               because the @Published property's value doesn't actually change                               until AFTER the pipeline has finished.")
             
             Button("Selected Lorenzo") {
-                vm.selection.send("Lorenzo")
+                vm.selection = "Lorenzo"
             }
             
             Button("Selected Elen") {
-                vm.selection.send("Elen")
+                vm.selection = "Elen"
             }
             
-            Text(vm.selection.value)
+            Text(vm.selection)
                 .foregroundStyle(vm.selectionSame.value ? .red : .green)
         }
         .font(.title)

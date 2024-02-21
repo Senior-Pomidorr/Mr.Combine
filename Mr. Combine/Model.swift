@@ -9,14 +9,14 @@ import SwiftUI
 import Combine
 
 class CurrentValueSubjectViewModel: ObservableObject {
-    var selection = CurrentValueSubject<String, Never>("No name selected")
+    @Published var selection = "No name selected"
     var selectionSame = CurrentValueSubject<Bool, Never>(false)
     var cancellable: [AnyCancellable] = []
     
     init() {
-        selection
+        $selection
             .map { [unowned self] newValue -> Bool in
-                if newValue == selection.value {
+                if newValue == selection {
                     return true
                 } else {
                     return false

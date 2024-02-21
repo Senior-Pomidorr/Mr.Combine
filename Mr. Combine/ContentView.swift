@@ -9,26 +9,26 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-    @StateObject var vm = CurrentValueSubjectViewModel()
+    @StateObject private var vm = FailIntroViewMode()
+    @State private var age = ""
     var body: some View {
         VStack(spacing: 20) {
-            HeaderView("CurrentValueSubject",
-                       subtitle: "Compared",
-                       desc: "Let's compare with @Published. The map operator will work now                               because the @Published property's value doesn't actually change                               until AFTER the pipeline has finished.")
+            HeaderView("Fail",
+                       subtitle: "Introduction",
+                       desc: "The Fail publisher will simply publish a failure with your error and close the pipeline.")
             
-            Button("Selected Lorenzo") {
-                vm.selection = "Lorenzo"
+            TextField("Enter Age", text: $age)
+                .keyboardType(UIKeyboardType.numberPad)                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            Button("Save") {
+                vm.save(age: Int(age) ?? -1)
             }
-            
-            Button("Selected Elen") {
-                vm.selection = "Elen"
-            }
-            
-            Text(vm.selection)
-                .foregroundStyle(vm.selectionSame.value ? .red : .green)
-        }
+            Text("\(vm.age)")}
         .font(.title)
-        
+        .alert(item: $vm.error) { error in
+            Alert(title: Text("Invalid Age"), message: Text(error.rawValue))
+        }
     }
 }
 

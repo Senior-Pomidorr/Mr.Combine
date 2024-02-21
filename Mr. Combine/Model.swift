@@ -8,24 +8,75 @@
 import SwiftUI
 import Combine
 
-class CurrentValueSubjectViewModel: ObservableObject {
-    @Published var selection = "No name selected"
-    var selectionSame = CurrentValueSubject<Bool, Never>(false)
-    var cancellable: [AnyCancellable] = []
+enum InvalidAgeError: String, Error, Identifiable {
+    var id: String { rawValue }
+    case lessThanZero = "Cannot be less than zero"
+    case moreThanOneHundred = "Cannot be more than 100"
+}
+
+
+class Validators {
+    static func validateAgePublisher(age: Int) -> AnyPublisher<Int, InvalidAgeError> {
+        if age < 0 {
+            return Fail(error: InvalidAgeError.lessThanZero)
+                .eraseToAnyPublisher()
+        } else if age > 100 {
+            return Fail(error: InvalidAgeError.moreThanOneHundred)
+                .eraseToAnyPublisher()
+        }
+        
+        return Just(age)
+            .setFailureType(to: InvalidAgeError.self)
+            .eraseToAnyPublisher()
+    }
+}
+
+class FailIntroViewMode: ObservableObject {
+    @Published var age = 0
+    @Published var error: InvalidAgeError?
     
-    init() {
-        $selection
-            .map { [unowned self] newValue -> Bool in
-                if newValue == selection {
-                    return true
-                } else {
-                    return false
+    func save(age: Int) {
+        _ = Validators.validateAgePublisher(age: age)
+            .sink(receiveCompletion: { [unowned self] completion in
+                if case .failure(let error) = completion {
+                    self.error = error
                 }
+            }, receiveValue: { [unowned self] age in
+                self.age = age
+            })
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+class FailInttroViewModel: ObservableObject {
+    @Published var dataToView: [String] = []
+    
+    func fetch() {
+        let dataIn = ["Value 1", "Value 2", "Value 3", "🧨", "Value 5", "Value 6"]
+        
+        _ = dataIn.publisher
+            .tryMap { item in
+                if item == "🧨" {
+                    print("Bomb DetectedError")
+                }
+                return item
             }
-            .sink { [unowned self] value  in
-                selectionSame.value = value
-                objectWillChange.send()
-            }
-            .store(in: &cancellable)
+            .catch({ (error) in
+                Empty(completeImmediately: true)
+            })
+            .sink(receiveValue: { [unowned self] item in
+                dataToView.append(item)
+            })
     }
 }

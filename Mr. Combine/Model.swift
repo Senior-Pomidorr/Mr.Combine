@@ -12,12 +12,16 @@ final class FutureIntroViewModel: ObservableObject {
     @Published var hello = ""
     @Published var goodbye = ""
     private var goodbyeCancellable: AnyCancellable?
+    private var futurePublisher = Deferred {
+        Future<String, Never> { success in
+            success(Result.success("Say hello!"))
+            print("Say Hello!")
+        }
+    }
     
     func sayHello() {
-        Future<String, Never> { promise in
-            promise(Result.success("Say hello!"))
-        }
-        .assign(to: &$hello)
+        futurePublisher
+            .assign(to: &$hello)
     }
     
     func sayGoodbye() {

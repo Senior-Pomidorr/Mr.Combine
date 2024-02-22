@@ -9,27 +9,32 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-    @StateObject private var vm = FutureIntroViewModel()
+    @StateObject private var vm = JustIntroViewModel()
     @State private var age = ""
     var body: some View {
         VStack(spacing: 20) {
-            HeaderView("Future",
+            HeaderView("Just",
                        subtitle: "Introduction",
-                       desc: "The future publisher.")
+                       desc: "The just publisher.")
+            .layoutPriority(1)
             
-            Button("Say Hello") {                
-                vm.sayHello()
+            Text("This week's winner:")
+            Text(vm.data)
+                .bold()
+            
+            Form {
+                Section(header: Text("Contest Participants").padding().font(.headline)) {
+                    List(vm.dataToView, id: \.self) { item in
+                        Text(item)
+                        
+                    }
+                }
             }
-            
-            Text(vm.hello)                
-                .padding(.bottom)
-            
-            Button("Say Goodbye") {                vm.sayGoodbye()
-            }
-            Text(vm.goodbye)
-            Spacer()
         }
         .font(.title)
+        .onAppear() {
+            vm.fetch()
+        }
     }
 }
 

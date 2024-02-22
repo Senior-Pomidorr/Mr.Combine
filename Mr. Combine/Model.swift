@@ -8,32 +8,25 @@
 import SwiftUI
 import Combine
 
-final class FutureIntroViewModel: ObservableObject {
-    @Published var hello = ""
-    @Published var goodbye = ""
-    private var goodbyeCancellable: AnyCancellable?
-    private var futurePublisher = Deferred {
-        Future<String, Never> { success in
-            success(Result.success("Say hello!"))
-            print("Say Hello!")
-        }
-    }
+final class JustIntroViewModel: ObservableObject {
+    @Published var data = ""
+    @Published var dataToView: [String] = []
     
-    func sayHello() {
-        futurePublisher
-            .assign(to: &$hello)
-    }
-    
-    func sayGoodbye() {
-        let futurePablisher = Future<String, Never> { promise in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                promise(.success("Goodbye my friend!"))
-            }
+    func fetch() {
+        let dataIn = ["Julian", "Meredith", "Luan", "Daniel", "Marina"]
+        
+        _ = dataIn.publisher
+            .sink(receiveValue: { data in
+                self.dataToView.append(data)
+            })
+        
+        if dataIn.count > 0 {
+            Just(dataIn.randomElement() ?? "")
+                .map { data in
+                    data.uppercased()
+                }
+                .assign(to: &$data)
         }
         
-        goodbyeCancellable = futurePablisher
-            .sink(receiveValue: { [unowned self] message in
-                goodbye = message
-            })
     }
 }

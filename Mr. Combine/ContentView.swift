@@ -9,26 +9,27 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-    @StateObject private var vm = FailIntroViewMode()
+    @StateObject private var vm = FutureIntroViewModel()
     @State private var age = ""
     var body: some View {
         VStack(spacing: 20) {
-            HeaderView("Fail",
+            HeaderView("Future",
                        subtitle: "Introduction",
-                       desc: "The Fail publisher will simply publish a failure with your error and close the pipeline.")
+                       desc: "The future publisher.")
             
-            TextField("Enter Age", text: $age)
-                .keyboardType(UIKeyboardType.numberPad)                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            
-            Button("Save") {
-                vm.save(age: Int(age) ?? -1)
+            Button("Say Hello") {                
+                vm.sayHello()
             }
-            Text("\(vm.age)")}
-        .font(.title)
-        .alert(item: $vm.error) { error in
-            Alert(title: Text("Invalid Age"), message: Text(error.rawValue))
+            
+            Text(vm.hello)                
+                .padding(.bottom)
+            
+            Button("Say Goodbye") {                vm.sayGoodbye()
+            }
+            Text(vm.goodbye)
+            Spacer()
         }
+        .font(.title)
     }
 }
 

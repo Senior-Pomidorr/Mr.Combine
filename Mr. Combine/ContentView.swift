@@ -13,27 +13,25 @@ struct ContentView: View {
     @State private var age = ""
     var body: some View {
         VStack(spacing: 20) {
-            HeaderView("Just",
+            HeaderView("PassthroughSubject",
                        subtitle: "Introduction",
                        desc: "The just publisher.")
             .layoutPriority(1)
             
-            Text("This week's winner:")
-            Text(vm.data)
-                .bold()
-            
-            Form {
-                Section(header: Text("Contest Participants").padding().font(.headline)) {
-                    List(vm.dataToView, id: \.self) { item in
-                        Text(item)
-                        
+            HStack {
+                TextField("credit card number", text: $vm.creditCard)
+                Group {
+                    switch (vm.status) {
+                    case .ok:                        Image(systemName: "checkmark.circle.fill")     .foregroundStyle(.green)              
+                    case .invalid:                        Image(systemName: "x.circle.fill")          .foregroundStyle(.red)
+                    default: EmptyView()
                     }
                 }
             }
-        }
-        .font(.title)
-        .onAppear() {
-            vm.fetch()
+            .padding()
+            Button("Verify CC Number") {                vm.verifyCreditCard.send(vm.creditCard)
+            }
+            .font(.title)
         }
     }
 }

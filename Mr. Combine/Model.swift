@@ -8,25 +8,26 @@
 import SwiftUI
 import Combine
 
+enum CreditCardStatus {
+    case ok
+    case invalid
+    case notEvaluated
+}
+
 final class JustIntroViewModel: ObservableObject {
-    @Published var data = ""
-    @Published var dataToView: [String] = []
+    @Published var creditCard = ""
+    @Published var status = CreditCardStatus.notEvaluated
+    var verifyCreditCard = PassthroughSubject<String, Never>()
     
-    func fetch() {
-        let dataIn = ["Julian", "Meredith", "Luan", "Daniel", "Marina"]
-        
-        _ = dataIn.publisher
-            .sink(receiveValue: { data in
-                self.dataToView.append(data)
-            })
-        
-        if dataIn.count > 0 {
-            Just(dataIn.randomElement() ?? "")
-                .map { data in
-                    data.uppercased()
+    init() {
+        verifyCreditCard
+            .map { creditCard -> CreditCardStatus in
+                if creditCard.count > 16 {
+                    return CreditCardStatus.ok
+                } else {
+                    return CreditCardStatus.invalid
                 }
-                .assign(to: &$data)
-        }
-        
+            }
+            .assign(to: &$status)
     }
 }

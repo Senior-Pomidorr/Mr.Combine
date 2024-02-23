@@ -13,25 +13,19 @@ struct ContentView: View {
     @State private var age = ""
     var body: some View {
         VStack(spacing: 20) {
-            HeaderView("PassthroughSubject",
+            HeaderView("Sequence",
                        subtitle: "Introduction",
-                       desc: "The just publisher.")
+                       desc: "The Sequence")
             .layoutPriority(1)
             
-            HStack {
-                TextField("credit card number", text: $vm.creditCard)
-                Group {
-                    switch (vm.status) {
-                    case .ok:                        Image(systemName: "checkmark.circle.fill")     .foregroundStyle(.green)              
-                    case .invalid:                        Image(systemName: "x.circle.fill")          .foregroundStyle(.red)
-                    default: EmptyView()
-                    }
-                }
-            }
-            .padding()
-            Button("Verify CC Number") {                vm.verifyCreditCard.send(vm.creditCard)
+            List(vm.dataToView, id:\.self) { item in
+                Text(item)
+                
             }
             .font(.title)
+        }
+        .onAppear() {
+            vm.fetch()
         }
     }
 }

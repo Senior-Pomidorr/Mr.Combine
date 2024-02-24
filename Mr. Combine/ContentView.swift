@@ -18,11 +18,10 @@ struct ContentView: View {
                        desc: "The Time Interval")
             .layoutPriority(1)
             
-            List(vm.dataToView, id: \._id) { cat in
-                Text(cat.text)
-            }
-            .font(.title3)
-            
+            vm.dataToView?
+                .resizable()
+                .scaledToFit()
+                
     
         }
         .onAppear() {

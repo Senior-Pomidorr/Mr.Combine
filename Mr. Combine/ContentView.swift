@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-    @StateObject private var vm = JustIntroViewModel()
+    @StateObject private var vm = DataTaskPublisher()
     @State private var age = ""
     var body: some View {
         VStack(spacing: 20) {
@@ -18,31 +18,23 @@ struct ContentView: View {
                        desc: "The Time Interval")
             .layoutPriority(1)
             
-            Text("Abjust interval")
-            Slider(
-                value: $vm.interval,
-                in: 0.1...1,
-                minimumValueLabel: Image(systemName: "hare"),
-                maximumValueLabel: Image(systemName: "tortoise"),
-                label: {
-                    Text("Interval")
-                }
-            )
-            .padding(.horizontal)
-            
-            Button("Stop") {
-                vm.stop()
+            List(vm.dataToView, id: \._id) { cat in
+                Text(cat.text)
             }
+            .font(.title3)
             
-            List(vm.data, id: \.self) { text in
-                Text(text)
-                    .font(.system(.title, design: .monospaced))
-            }
-            
-            .font(.title)
+    
         }
         .onAppear() {
-            vm.start()
+            vm.fetch()
+        }
+        .alert(item: $vm.errorForAlert) { errorForAlert in
+            Alert(
+                title: Text(
+                    errorForAlert.title
+                ),
+                message: Text(errorForAlert.message)
+            )
         }
     }
 }

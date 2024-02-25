@@ -45,6 +45,13 @@ struct ContentView: View {
         }
         .padding(.bottom)
         .font(.title)
+        .alert(item: $vm.invaliderror) { error in
+            Alert(title: Text("A number was greather than 144"), primaryButton: .default(Text("Start Over"), action: {
+                vm.numbers.removeAll()
+            }),
+                  secondaryButton: .cancel()
+            )
+        }
     }
 }
 

@@ -18,22 +18,16 @@ struct ContentView: View {
                 HeaderView("Try MAX",
                            subtitle: "Introduction",
                            desc: "MAX")
-                .layoutPriority(1)
-                List {
-                    Section(footer: Text("Max: \(vm.maxValue)").bold()) {
-                        ForEach(vm.data, id: \.self) { animal in
-                            Text(animal)
-                        }
-                    }
-                }
                 
-                List {
-                    Section(footer: Text("Max: \(vm.maxNumbers)").bold()) {
-                        ForEach(vm.numbers, id: \.self) { number in
-                            Text(String(number))
-                        }
+                List(vm.profiles) { profile in
+                    HStack {
+                        Text(profile.name)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Text(profile.city)
+                            .foregroundStyle(.secondary)
                     }
                 }
+                Text("Max city: -\(vm.maxValue)")
             }
             .font(.title)
             .onAppear() {

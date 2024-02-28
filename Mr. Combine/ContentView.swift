@@ -13,33 +13,47 @@ struct ContentView: View {
     @State private var checkNumbers = false
     @StateObject private var vm = AllSatisfy()
     var body: some View {
-        VStack(spacing: 20) {
-            HeaderView("TryContains",
-                       subtitle: "Introduction",
-                       desc: "TryContains")
-            .layoutPriority(1)
-            
-            Text("Look for salt water in")
-            Picker("Place", selection: $vm.place) {
-                Text("Nevada").tag("Nevada")
-                Text("Utah").tag("Utah")
-                Text("Mars").tag("Mars")
+        NavigationStack {
+            VStack(spacing: 20) {
+                HeaderView("TryContains",
+                           subtitle: "Introduction",
+                           desc: "TryContains")
+                
+                Form {
+                    NavigationLink {
+                        CountDetailView(data: vm.data)
+                    } label: {
+                        Text(vm.title)
+                            .frame(width: .infinity, alignment: .leading)
+                        Text("\(vm.count)")
+                    }
+                }
+                Text("Result: \(vm.count)")
             }
-            .pickerStyle(SegmentedPickerStyle())
-            
-            Button("Search") {
-                vm.search()
+            .onAppear() {
+                vm.fetch()
             }
-            Text("Result: \(vm.result)")
+            .padding(.bottom)
+            .font(.title)
         }
-        .padding(.bottom)
-        .font(.title)
-        .alert(item: $vm.invalidSelectionError) { error in
-            Alert(title: Text("Invalid Selection"))
-                  }
     }
 }
 
+
+struct CountDetailView: View {
+    var data: [String]
+    
+    var body: some View {
+        List(data, id: \.self) { dataIn in
+            Text(dataIn)
+        }
+        .font(.title)
+    }
+}
+
+
 #Preview {
-    ContentView()
+    NavigationStack {
+        ContentView()
+    }
 }

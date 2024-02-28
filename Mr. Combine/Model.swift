@@ -10,23 +10,28 @@ import Combine
 
 
 
-struct InvalidNumberError: Error, Identifiable {
-    var id = UUID()
-}
+//struct ViewModel: Error, Identifiable {
+//    var id = UUID()
+//}
 
-final class AllSatisfy: ObservableObject {
-    @Published var title = ""
+final class ViewModel: ObservableObject {
     @Published var data: [String] = []
-    @Published var count = 0
+    @Published var maxValue = ""
+    @Published var numbers: [Int] = []
+    @Published var maxNumbers = 0
     
     func fetch() {
-        title = "Major Rivers"
-        let dataIn = ["Mississippi", "Nile", "Yangtze", "Danube", "Ganges", "Amazon", "Volga", "Rhine"]
-        
+        let dataIn = ["Aardvark", "Zebra", "Elephant"]
         data = dataIn
         
         dataIn.publisher
-            .count()
-            .assign(to: &$count)
+            .max()
+            .assign(to: &$maxValue)
+        
+        let dataInNumbers = [900, 245, 783]
+        numbers = dataInNumbers
+        dataInNumbers.publisher
+            .max()
+            .assign(to: &$maxNumbers)
     }
 }

@@ -11,43 +11,35 @@ import Combine
 struct ContentView: View {
     @State private var number = ""
     @State private var checkNumbers = false
-    @StateObject private var vm = AllSatisfy()
+    @StateObject private var vm = ViewModel()
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                HeaderView("TryContains",
+                HeaderView("Try MAX",
                            subtitle: "Introduction",
-                           desc: "TryContains")
-                
-                Form {
-                    NavigationLink {
-                        CountDetailView(data: vm.data)
-                    } label: {
-                        Text(vm.title)
-                            .frame(width: .infinity, alignment: .leading)
-                        Text("\(vm.count)")
+                           desc: "MAX")
+                .layoutPriority(1)
+                List {
+                    Section(footer: Text("Max: \(vm.maxValue)").bold()) {
+                        ForEach(vm.data, id: \.self) { animal in
+                            Text(animal)
+                        }
                     }
                 }
-                Text("Result: \(vm.count)")
+                
+                List {
+                    Section(footer: Text("Max: \(vm.maxNumbers)").bold()) {
+                        ForEach(vm.numbers, id: \.self) { number in
+                            Text(String(number))
+                        }
+                    }
+                }
             }
+            .font(.title)
             .onAppear() {
                 vm.fetch()
             }
-            .padding(.bottom)
-            .font(.title)
         }
-    }
-}
-
-
-struct CountDetailView: View {
-    var data: [String]
-    
-    var body: some View {
-        List(data, id: \.self) { dataIn in
-            Text(dataIn)
-        }
-        .font(.title)
     }
 }
 

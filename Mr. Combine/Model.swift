@@ -10,39 +10,31 @@ import Combine
 
 struct InvalidNumberError: Error, Identifiable {
     var id = UUID()
-    var error = ""
 }
 
 final class AllSatisfy: ObservableObject {
-    @Published var numbers = [Int]()
-    @Published var allFibanachiNumbers = false
-    @Published var invaliderror: InvalidNumberError?
-    var cancellbales: Set<AnyCancellable> = []
+    @Published var place = "Nevada"
+    @Published var result = ""
+    @Published var invalidSelectionError: InvalidNumberError?
+    let incomingData = ["Places with Slat Water", "Utah", "California"]
     
-    func allFibanachiCheck() {
-        let fibanachiNumbers = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
-        _ = numbers.publisher
-            .tryAllSatisfy { number in
-                if number > 144 {
+    func search() {
+       _ = incomingData.publisher
+            .tryContains(where: { [unowned self] item -> Bool in
+                if place == "Mars" {
                     throw InvalidNumberError()
                 }
-                return fibanachiNumbers.contains(number)
-            }
-            .sink { [unowned self] completion in
+                return item == place
+            })
+            .sink(receiveCompletion: { [unowned self] completion in
                 switch completion {
                 case .failure(let error):
-                    self.invaliderror = error as? InvalidNumberError
+                    self.invalidSelectionError = error as? InvalidNumberError
                 default:
                     break
                 }
-            } receiveValue: { [unowned self] value in
-                allFibanachiNumbers = value
-            }
+            }, receiveValue: { [unowned self] result in
+                self.result = result ? "Found" : "Not Found"
+            })
     }
-    
-    func add(number: String) {
-        if number.isEmpty { return }
-        numbers.append(Int(number) ?? 0)
-    }
-    
 }

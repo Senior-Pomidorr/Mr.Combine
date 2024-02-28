@@ -14,44 +14,29 @@ struct ContentView: View {
     @StateObject private var vm = AllSatisfy()
     var body: some View {
         VStack(spacing: 20) {
-            HeaderView("AllSatisfy",
+            HeaderView("TryContains",
                        subtitle: "Introduction",
-                       desc: "AllSatisfy")
+                       desc: "TryContains")
             .layoutPriority(1)
             
-            HStack {
-                TextField("add a number", text: $number)
-                    .textFieldStyle(.roundedBorder)
-                    .keyboardType(.numberPad)
-                Button {
-                    vm.add(number: number)
-                    number = ""
-                } label: {
-                    Image(systemName: "plus")
-                }
+            Text("Look for salt water in")
+            Picker("Place", selection: $vm.place) {
+                Text("Nevada").tag("Nevada")
+                Text("Utah").tag("Utah")
+                Text("Mars").tag("Mars")
             }
-            .padding()
+            .pickerStyle(SegmentedPickerStyle())
             
-            List(vm.numbers, id: \.self) { number in
-                Text("\(number)")
+            Button("Search") {
+                vm.search()
             }
-            Spacer(minLength: 0)
-            Button("Fibanachi Numbers") {
-                vm.allFibanachiCheck()
-                checkNumbers = true
-            }
-            Text(vm.allFibanachiNumbers ? "Yes" : "No")
-                .opacity(checkNumbers ? 1 : 0)
+            Text("Result: \(vm.result)")
         }
         .padding(.bottom)
         .font(.title)
-        .alert(item: $vm.invaliderror) { error in
-            Alert(title: Text("A number was greather than 144"), primaryButton: .default(Text("Start Over"), action: {
-                vm.numbers.removeAll()
-            }),
-                  secondaryButton: .cancel()
-            )
-        }
+        .alert(item: $vm.invalidSelectionError) { error in
+            Alert(title: Text("Invalid Selection"))
+                  }
     }
 }
 

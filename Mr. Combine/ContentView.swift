@@ -15,24 +15,25 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                HeaderView("Try MAX",
+                HeaderView("Try prefix",
                            subtitle: "Introduction",
-                           desc: "MAX")
+                           desc: "prefix")
                 
-                List(vm.profiles) { profile in
-                    HStack {
-                        Text(profile.name)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Text(profile.city)
-                            .foregroundStyle(.secondary)
-                    }
+                Text("Limit Results")
+                Slider(value: $vm.itemCount, in: 1...10, step: 1)
+                    .padding()
+                Text(String(Int(vm.itemCount)))
+                
+                Button("Fetch Data") {
+                    vm.fetch()
                 }
-                Text("Max city: -\(vm.maxValue)")
+                
+                List(vm.data, id: \.self) { data in
+                    Text(data)
+                }
+                Spacer(minLength: 0)
             }
             .font(.title)
-            .onAppear() {
-                vm.fetch()
-            }
         }
     }
 }

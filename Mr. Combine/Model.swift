@@ -8,34 +8,19 @@
 import SwiftUI
 import Combine
 
-
-
-struct Profile: Identifiable {
-    var id = UUID()
-    var name = ""
-    var city = ""
-}
-
 final class ViewModel: ObservableObject {
-    @Published var profiles: [Profile] = []
-    @Published var maxValue = ""
-
-    let dataIn = [Profile(name: "Igor", city: "Moscow"),
-                  Profile(name: "Rebecca", city: "Atlanta"),
-                  Profile(name: "Christina", city: "Stuttgart"),
-                  Profile(name: "Lorenzo", city: "Rome"),
-                  Profile(name: "Oliver", city: "London")]
+    @Published var data: [String] = []
+    @Published var itemCount = 5.0
     
     func fetch() {
+        data.removeAll()
         
-        profiles = dataIn
+        let fetchedData = ["Result 1", "Result 2", "Result 3", "Result 4", "Result 5", "Result 6", "Result 7", "Result 8", "Result 9", "Result 10"]
         
-        _ = dataIn.publisher
-            .max { currentItem, nextItem in
-                return currentItem.city < nextItem.city
-            }
-            .sink(receiveValue: { [unowned self] profile in
-                maxValue = profile.city
+        _ = fetchedData.publisher
+            .prefix(Int(itemCount))
+            .sink(receiveValue: { [unowned self] result in
+                data.append(result)
             })
     }
 }

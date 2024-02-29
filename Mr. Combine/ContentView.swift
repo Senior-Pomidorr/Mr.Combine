@@ -15,22 +15,14 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                HeaderView("Try prefix",
+                HeaderView("Debounce",
                            subtitle: "Introduction",
-                           desc: "prefix")
+                           desc: "debounce")
                 
-                Text("Limit Results")
-                Slider(value: $vm.itemCount, in: 1...10, step: 1)
+                TextField("name", text: $vm.name)
+                    .textFieldStyle(.roundedBorder)
                     .padding()
-                Text(String(Int(vm.itemCount)))
-                
-                Button("Fetch Data") {
-                    vm.fetch()
-                }
-                
-                List(vm.data, id: \.self) { data in
-                    Text(data)
-                }
+                Text(vm.nameEntered)
                 Spacer(minLength: 0)
             }
             .font(.title)

@@ -19,13 +19,20 @@ struct ContentView: View {
                            subtitle: "Introduction",
                            desc: "debounce")
                 
-                TextField("name", text: $vm.name)
-                    .textFieldStyle(.roundedBorder)
-                    .padding()
-                Text(vm.nameEntered)
+                Button("Fetch Data") {
+                    vm.fetch()
+                }
+                
+                if vm.isFetching {
+                    ProgressView("Fetching....")
+                }
+                
                 Spacer(minLength: 0)
             }
             .font(.title)
+            .alert(item: $vm.timeOutError) { timeOutError in
+                Alert(title: Text(timeOutError.title), message: Text(timeOutError.message))
+            }
         }
     }
 }

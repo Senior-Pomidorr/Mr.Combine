@@ -14,24 +14,23 @@ struct InvalidValueError: Error, Identifiable {
 }
 
 final class ViewModel: ObservableObject {
-    @Published var dataToView: [String] = []
-    @Published var invalidValueError: InvalidValueError?
-    let dataIn = ["Value 1", nil, "Value 3", nil, "Value 5", "Invalid"]
+    @Published var filtredData: [String] = []
+    let dataIn = ["Person 1", "Person 2", "Animal 1", "Person 3", "Animal 2", "Animal 3"]
+    private var cancellable: AnyCancellable?
     
-    func fetch() {
-        _ = dataIn.publisher
-            .tryCompactMap { item in
-                if item == "Invalid" {
-                    throw InvalidValueError()
-                }
-                return item
-            }
-            .sink(receiveCompletion: { [unowned self] completion in
-                if case .failure(let error) = completion {
-                    self.invalidValueError = error as? InvalidValueError
-                }
-            }, receiveValue: { [unowned self] value in
-                dataToView.append(value)
+    init() {
+        filterData(criteria: " ")
+    }
+    
+    func filterData(criteria: String) {
+        filtredData.removeAll()
+        
+        cancellable = dataIn.publisher
+            .filter({ item -> Bool in
+                item.contains(criteria)
+            })
+            .sink(receiveValue: { [unowned self] value in
+                filtredData.append(value)
             })
     }
 }

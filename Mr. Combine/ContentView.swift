@@ -9,28 +9,32 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-    @State private var number = ""
-    @State private var checkNumbers = false
     @StateObject private var vm = ViewModel()
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                HeaderView("Debounce",
+                HeaderView("Filter",
                            subtitle: "Introduction",
-                           desc: "debounce")
+                           desc: "Filter")
                 
-                List(vm.dataToView, id: \.self) { item in
-                     Text(item)
+                HStack(spacing: 40) {
+                    Button("Animals") {
+                        vm.filterData(criteria: "Animal")
+                    }
+                    Button("People") {
+                        vm.filterData(criteria: "Person")
+                    }
+                    Button("All") {
+                        vm.filterData(criteria: " ")
+                    }
                 }
-                Spacer(minLength: 0)
+                
+                List(vm.filtredData, id: \.self) { item in
+                    Text(item)
+                }
+               
             }
             .font(.title)
-            .alert(item: $vm.invalidValueError) { timeOutError in
-                Alert(title: Text("Error"), message: Text(timeOutError.description))
-            }
-            .onAppear() {
-                vm.fetch()
-            }
         }
     }
 }

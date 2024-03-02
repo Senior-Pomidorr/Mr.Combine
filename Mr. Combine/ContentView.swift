@@ -13,28 +13,23 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                HeaderView("Filter",
+                HeaderView("removeDuplicates",
                            subtitle: "Introduction",
-                           desc: "Filter")
+                           desc: "removeDuplicates")
                 
-                HStack(spacing: 40) {
-                    Button("Animals") {
-                        vm.filterData(criteria: "Animal")
-                    }
-                    Button("People") {
-                        vm.filterData(criteria: "Person")
-                    }
-                    Button("All") {
-                        vm.filterData(criteria: " ")
+                ScrollView {
+                    ForEach(vm.filtredData, id: \.self) { data in
+                        Text(data)
+                        Divider()
                     }
                 }
-                
-                List(vm.filtredData, id: \.self) { item in
-                    Text(item)
-                }
-               
+                DescView("Notice that only duplicates that are one-after-another are removed")
+                    
             }
             .font(.title)
+            .onAppear() {
+                vm.fetch()
+            }
         }
     }
 }

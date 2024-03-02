@@ -15,22 +15,14 @@ struct InvalidValueError: Error, Identifiable {
 
 final class ViewModel: ObservableObject {
     @Published var filtredData: [String] = []
-    let dataIn = ["Person 1", "Person 2", "Animal 1", "Person 3", "Animal 2", "Animal 3"]
+    let dataIn = ["Lem", "Lem", "Scott", "Scott", "Chris", "Mark", "Adam", "Jared", "Mark"]
     private var cancellable: AnyCancellable?
     
-    init() {
-        filterData(criteria: " ")
-    }
-    
-    func filterData(criteria: String) {
-        filtredData.removeAll()
-        
+    func fetch() {
         cancellable = dataIn.publisher
-            .filter({ item -> Bool in
-                item.contains(criteria)
-            })
-            .sink(receiveValue: { [unowned self] value in
-                filtredData.append(value)
+            .removeDuplicates()
+            .sink(receiveValue: { [unowned self] data in
+                self.filtredData.append(data)
             })
     }
 }

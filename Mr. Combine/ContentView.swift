@@ -19,19 +19,17 @@ struct ContentView: View {
                            subtitle: "Introduction",
                            desc: "debounce")
                 
-                Button("Fetch Data") {
-                    vm.fetch()
+                List(vm.dataToView, id: \.self) { item in
+                     Text(item)
                 }
-                
-                if vm.isFetching {
-                    ProgressView("Fetching....")
-                }
-                
                 Spacer(minLength: 0)
             }
             .font(.title)
-            .alert(item: $vm.timeOutError) { timeOutError in
-                Alert(title: Text(timeOutError.title), message: Text(timeOutError.message))
+            .alert(item: $vm.invalidValueError) { timeOutError in
+                Alert(title: Text("Error"), message: Text(timeOutError.description))
+            }
+            .onAppear() {
+                vm.fetch()
             }
         }
     }

@@ -8,37 +8,30 @@
 import SwiftUI
 import Combine
 
-struct TimeOutError: Error, Identifiable {
+struct InvalidValueError: Error, Identifiable {
     let id = UUID()
-    let title = "Timeout"
-    let message = "Please try again later."
+    let description = "One of the values you entered is invalid and will have to be update"
 }
 
 final class ViewModel: ObservableObject {
     @Published var dataToView: [String] = []
-    @Published var isFetching = false
-    @Published var timeOutError: TimeOutError?
-    private var cancellablle: AnyCancellable?
+    @Published var invalidValueError: InvalidValueError?
+    let dataIn = ["Value 1", nil, "Value 3", nil, "Value 5", "Invalid"]
     
     func fetch() {
-        isFetching = true
-        
-        let url = URL(string: "https://bigmountainstudio.com/nothing")!
-        
-        cancellablle = URLSession.shared.dataTaskPublisher(for: url)
-            .timeout(.seconds(3), scheduler: RunLoop.main, customError: {
-                URLError(.timedOut)
-            })
-            .map{ $0.data }
-            .decode(type: String.self, decoder: JSONDecoder())
+        _ = dataIn.publisher
+            .tryCompactMap { item in
+                if item == "Invalid" {
+                    throw InvalidValueError()
+                }
+                return item
+            }
             .sink(receiveCompletion: { [unowned self] completion in
-                isFetching = false
-                if case .failure(let failure) = completion {
-                    timeOutError = TimeOutError()
+                if case .failure(let error) = completion {
+                    self.invalidValueError = error as? InvalidValueError
                 }
             }, receiveValue: { [unowned self] value in
                 dataToView.append(value)
             })
     }
-    
 }

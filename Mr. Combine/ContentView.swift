@@ -13,18 +13,13 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                HeaderView("removeDuplicates",
+                HeaderView("removeDuplicates by:",
                            subtitle: "Introduction",
-                           desc: "removeDuplicates")
-                
-                ScrollView {
-                    ForEach(vm.filtredData, id: \.self) { data in
-                        Text(data)
-                        Divider()
-                    }
+                           desc: "removeDuplicates by:")
+                List(vm.filtredData) { data in
+                    Text(data.email)
                 }
                 DescView("Notice that only duplicates that are one-after-another are removed")
-                    
             }
             .font(.title)
             .onAppear() {

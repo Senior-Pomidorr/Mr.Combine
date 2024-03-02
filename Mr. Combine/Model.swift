@@ -8,19 +8,27 @@
 import SwiftUI
 import Combine
 
-struct InvalidValueError: Error, Identifiable {
+struct UserId: Identifiable {
     let id = UUID()
-    let description = "One of the values you entered is invalid and will have to be update"
+    var email: String
+    var name: String
 }
 
 final class ViewModel: ObservableObject {
-    @Published var filtredData: [String] = []
-    let dataIn = ["Lem", "Lem", "Scott", "Scott", "Chris", "Mark", "Adam", "Jared", "Mark"]
+    @Published var filtredData: [UserId] = []
+    let dataIn = [UserId(email: "joe.m@gmail.com", name: "Joe M."),
+                  UserId(email: "joe.m@gmail.com", name: "Joseph M."),
+                  UserId(email: "christina@icloud.com", name: "Christina B."),
+                  UserId(email: "enzo@enel.it", name: "Lorenzo D."),
+                  UserId(email: "enzo@enel.it", name: "Enzo D.")]
     private var cancellable: AnyCancellable?
+    
     
     func fetch() {
         cancellable = dataIn.publisher
-            .removeDuplicates()
+            .removeDuplicates(by: { previousUserId, currentUserId in
+                previousUserId.email == currentUserId.email
+            })
             .sink(receiveValue: { [unowned self] data in
                 self.filtredData.append(data)
             })

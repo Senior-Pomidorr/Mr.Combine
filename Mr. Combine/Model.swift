@@ -16,37 +16,21 @@ struct InvalidValueError: Identifiable, Error {
 final class ViewModel: ObservableObject {
     @Published var error: InvalidValueError?
     @Published var states: [String] = []
+    var items = ["Utah", "Nevada", "Colorado", "🧨", "Idaho"]
     
-    func getPipelines(westernStates: Bool) -> AnyPublisher<String, Error> {
-        if westernStates {
-            ["Utah", "Nevada", "Colorado", "🧨", "Idaho"].publisher
-                .tryMap { item in
-                    if item == "🧨" {
-                        throw InvalidValueError()
-                    }
-                    return item
+    func scan() {
+        _ = items.publisher
+            .tryScan("Texas", { [unowned self] prevValue, currentValue in
+                if currentValue == "🧨" {
+                    throw InvalidValueError()
                 }
-                .eraseToAnyPublisher()
-        } else {
-             ["Vermont", "New Hampshire", "Maine", "🧨", "Rhode Island"].publisher
-                .map { item in
-                    if item == "🧨" {
-                        return "Montana"
-                    }
-                    return item
-                }
-                .setFailureType(to: Error.self)
-                .eraseToAnyPublisher()
-        }
-    }
-    
-    func fetch(westernStates: Bool) {
-        states.removeAll()
-        
-        _ = getPipelines(westernStates: westernStates)
+                return prevValue + " " + currentValue
+            })
             .sink(receiveCompletion: { [unowned self] completion in
-                if case .failure(let error) = completion {
-                    self.error = error as? InvalidValueError
+                if case .failure(let failure) = completion {
+                    if let err = failure as? InvalidValueError {
+                        states.append(err.description + " " + "🧨")
+                    }
                 }
             }, receiveValue: { [unowned self] value in
                 states.append(value)

@@ -13,19 +13,11 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                HeaderView("Replace Empty",
+                HeaderView("Try Scan",
                            subtitle: "Introduction",
-                           desc: "Replace Empty")
+                           desc: "Try Scan")
                 
-                HStack {
-                    Button("Western") {
-                        vm.fetch(westernStates: false)
-                    }
-                    .padding()
-                    Button("Eastern") {
-                        vm.fetch(westernStates: true)
-                    }
-                }
+                
                 List(vm.states, id: \.self) { item in
                     Text(item)
                 }
@@ -35,6 +27,9 @@ struct ContentView: View {
         .alert(item: $vm.error, content: { error in
             Alert(title: Text("Error"), message: Text(error.description))
         })
+        .onAppear() {
+            vm.scan()
+        }
     }
 }
 

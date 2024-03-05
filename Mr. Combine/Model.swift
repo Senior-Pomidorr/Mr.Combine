@@ -8,21 +8,48 @@
 import SwiftUI
 import Combine
 
-struct ServerError: Identifiable, Error {
+struct InvalidValueError: Identifiable, Error {
     let id = UUID()
     var description = "There was a server error while retrieving values."
 }
 
 final class ViewModel: ObservableObject {
-    @Published var dataToView: [String] = []
-    @Published var error: ServerError?
-    let dataIn = ["Result 1", "Result 2", nil, "Server Error", nil, "Result 5"]
+    @Published var error: InvalidValueError?
+    @Published var states: [String] = []
     
-    func fetch() {
-        _ = dataIn.publisher
-            .replaceNil(with: "Nil was here")
-            .sink(receiveValue: { [unowned self] value in
-                dataToView.append(value)
+    func getPipelines(westernStates: Bool) -> AnyPublisher<String, Error> {
+        if westernStates {
+            ["Utah", "Nevada", "Colorado", "🧨", "Idaho"].publisher
+                .tryMap { item in
+                    if item == "🧨" {
+                        throw InvalidValueError()
+                    }
+                    return item
+                }
+                .eraseToAnyPublisher()
+        } else {
+             ["Vermont", "New Hampshire", "Maine", "🧨", "Rhode Island"].publisher
+                .map { item in
+                    if item == "🧨" {
+                        return "Montana"
+                    }
+                    return item
+                }
+                .setFailureType(to: Error.self)
+                .eraseToAnyPublisher()
+        }
+    }
+    
+    func fetch(westernStates: Bool) {
+        states.removeAll()
+        
+        _ = getPipelines(westernStates: westernStates)
+            .sink(receiveCompletion: { [unowned self] completion in
+                if case .failure(let error) = completion {
+                    self.error = error as? InvalidValueError
+                }
+            }, receiveValue: { [unowned self] value in
+                states.append(value)
             })
     }
 }

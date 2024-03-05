@@ -17,7 +17,16 @@ struct ContentView: View {
                            subtitle: "Introduction",
                            desc: "Replace Empty")
                 
-                List(vm.dataToView, id: \.self) { item in
+                HStack {
+                    Button("Western") {
+                        vm.fetch(westernStates: false)
+                    }
+                    .padding()
+                    Button("Eastern") {
+                        vm.fetch(westernStates: true)
+                    }
+                }
+                List(vm.states, id: \.self) { item in
                     Text(item)
                 }
             }
@@ -26,9 +35,6 @@ struct ContentView: View {
         .alert(item: $vm.error, content: { error in
             Alert(title: Text("Error"), message: Text(error.description))
         })
-        .onAppear() {
-            vm.fetch()
-        }
     }
 }
 

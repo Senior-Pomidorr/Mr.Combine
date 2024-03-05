@@ -16,21 +16,12 @@ struct ServerError: Identifiable, Error {
 final class ViewModel: ObservableObject {
     @Published var dataToView: [String] = []
     @Published var error: ServerError?
-    let dataIn = ["Result 1", "Result 2", "Server Error", "Result 5"]
+    let dataIn = ["Result 1", "Result 2", nil, "Server Error", nil, "Result 5"]
     
     func fetch() {
         _ = dataIn.publisher
-            .tryMap({ item in
-                if item.contains("Error") {
-                    throw ServerError()
-            }
-                return item
-            })
-            .sink(receiveCompletion: { [unowned self] completion in
-                if case .failure(let error) = completion {
-                    self.error = error as? ServerError
-                }
-            }, receiveValue: { [unowned self] value in
+            .replaceNil(with: "Nil was here")
+            .sink(receiveValue: { [unowned self] value in
                 dataToView.append(value)
             })
     }

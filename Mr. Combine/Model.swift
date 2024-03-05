@@ -8,27 +8,30 @@
 import SwiftUI
 import Combine
 
-struct UserId: Identifiable {
+struct ServerError: Identifiable, Error {
     let id = UUID()
-    var email: String
-    var name: String
+    var description = "There was a server error while retrieving values."
 }
 
 final class ViewModel: ObservableObject {
     @Published var dataToView: [String] = []
-    @Published var criteria = ""
-    var noResults = "No results found"
-    let dataIn = ["Result 1", "Result 2", "Result 3", "Result 4", "Result 5"]
+    @Published var error: ServerError?
+    let dataIn = ["Result 1", "Result 2", "Server Error", "Result 5"]
     
-    func search() {
-        dataToView.removeAll()
-        
+    func fetch() {
         _ = dataIn.publisher
-            .filter { $0.contains(criteria) }
-            .replaceEmpty(with: noResults)
-            .sink(receiveValue: { [weak self] value in
-                    guard let self = self else { return }
-                    dataToView.append(value)
+            .tryMap({ item in
+                if item.contains("Error") {
+                    throw ServerError()
+            }
+                return item
+            })
+            .sink(receiveCompletion: { [unowned self] completion in
+                if case .failure(let error) = completion {
+                    self.error = error as? ServerError
+                }
+            }, receiveValue: { [unowned self] value in
+                dataToView.append(value)
             })
     }
 }

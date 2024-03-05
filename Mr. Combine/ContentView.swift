@@ -16,21 +16,19 @@ struct ContentView: View {
                 HeaderView("Replace Empty",
                            subtitle: "Introduction",
                            desc: "Replace Empty")
-                HStack {
-                    TextField("Enter text", text: $vm.criteria)
-                    Button("Seatch") {
-                        vm.search()
-                    }
-                }
-                .padding()
                 
                 List(vm.dataToView, id: \.self) { item in
                     Text(item)
-                        .foregroundStyle(item == vm.noResults ? .gray : .primary)
                 }
             }
+            .font(.title)
         }
-        .font(.title)
+        .alert(item: $vm.error, content: { error in
+            Alert(title: Text("Error"), message: Text(error.description))
+        })
+        .onAppear() {
+            vm.fetch()
+        }
     }
 }
 

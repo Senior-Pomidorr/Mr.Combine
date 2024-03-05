@@ -13,21 +13,27 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                HeaderView("removeDuplicates by:",
+                HeaderView("Replace Empty",
                            subtitle: "Introduction",
-                           desc: "removeDuplicates by:")
-                List(vm.filtredData) { data in
-                    Text(data.email)
+                           desc: "Replace Empty")
+                HStack {
+                    TextField("Enter text", text: $vm.criteria)
+                    Button("Seatch") {
+                        vm.search()
+                    }
                 }
-                DescView("Notice that only duplicates that are one-after-another are removed")
-            }
-            .font(.title)
-            .onAppear() {
-                vm.fetch()
+                .padding()
+                
+                List(vm.dataToView, id: \.self) { item in
+                    Text(item)
+                        .foregroundStyle(item == vm.noResults ? .gray : .primary)
+                }
             }
         }
+        .font(.title)
     }
 }
+
 
 
 #Preview {

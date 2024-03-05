@@ -15,22 +15,20 @@ struct UserId: Identifiable {
 }
 
 final class ViewModel: ObservableObject {
-    @Published var filtredData: [UserId] = []
-    let dataIn = [UserId(email: "joe.m@gmail.com", name: "Joe M."),
-                  UserId(email: "joe.m@gmail.com", name: "Joseph M."),
-                  UserId(email: "christina@icloud.com", name: "Christina B."),
-                  UserId(email: "enzo@enel.it", name: "Lorenzo D."),
-                  UserId(email: "enzo@enel.it", name: "Enzo D.")]
-    private var cancellable: AnyCancellable?
+    @Published var dataToView: [String] = []
+    @Published var criteria = ""
+    var noResults = "No results found"
+    let dataIn = ["Result 1", "Result 2", "Result 3", "Result 4", "Result 5"]
     
-    
-    func fetch() {
-        cancellable = dataIn.publisher
-            .removeDuplicates(by: { previousUserId, currentUserId in
-                previousUserId.email == currentUserId.email
-            })
-            .sink(receiveValue: { [unowned self] data in
-                self.filtredData.append(data)
+    func search() {
+        dataToView.removeAll()
+        
+        _ = dataIn.publisher
+            .filter { $0.contains(criteria) }
+            .replaceEmpty(with: noResults)
+            .sink(receiveValue: { [weak self] value in
+                    guard let self = self else { return }
+                    dataToView.append(value)
             })
     }
 }

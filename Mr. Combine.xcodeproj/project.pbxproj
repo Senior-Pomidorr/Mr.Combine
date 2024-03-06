@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0DC1766A2B98827300C6CEA1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC176692B98827300C6CEA1 /* MainView.swift */; };
+		0DC1766D2B9884BE00C6CEA1 /* CollectBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC1766C2B9884BE00C6CEA1 /* CollectBy.swift */; };
+		0DC176702B98850A00C6CEA1 /* CollectByModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC1766F2B98850A00C6CEA1 /* CollectByModel.swift */; };
 		0DEB25A52B8392C700B07C08 /* Mr__CombineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB25A42B8392C700B07C08 /* Mr__CombineApp.swift */; };
 		0DEB25A72B8392C700B07C08 /* CollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB25A62B8392C700B07C08 /* CollectView.swift */; };
 		0DEB25A92B8392C900B07C08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB25A82B8392C900B07C08 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		0DC176692B98827300C6CEA1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0DC1766C2B9884BE00C6CEA1 /* CollectBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectBy.swift; sourceTree = "<group>"; };
+		0DC1766F2B98850A00C6CEA1 /* CollectByModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectByModel.swift; sourceTree = "<group>"; };
 		0DEB25A12B8392C700B07C08 /* Mr. Combine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr. Combine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DEB25A42B8392C700B07C08 /* Mr__CombineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mr__CombineApp.swift; sourceTree = "<group>"; };
 		0DEB25A62B8392C700B07C08 /* CollectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectView.swift; sourceTree = "<group>"; };
@@ -47,6 +51,15 @@
 			path = CollectView;
 			sourceTree = "<group>";
 		};
+		0DC1766E2B9884D900C6CEA1 /* CollectBy */ = {
+			isa = PBXGroup;
+			children = (
+				0DC1766C2B9884BE00C6CEA1 /* CollectBy.swift */,
+				0DC1766F2B98850A00C6CEA1 /* CollectByModel.swift */,
+			);
+			path = CollectBy;
+			sourceTree = "<group>";
+		};
 		0DEB25982B8392C700B07C08 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +82,7 @@
 				0DEB25A42B8392C700B07C08 /* Mr__CombineApp.swift */,
 				0DC176692B98827300C6CEA1 /* MainView.swift */,
 				0DC1766B2B9882EF00C6CEA1 /* CollectView */,
+				0DC1766E2B9884D900C6CEA1 /* CollectBy */,
 				0DEB25B42B83B1F800B07C08 /* HeaderView.swift */,
 				0DEB25A82B8392C900B07C08 /* Assets.xcassets */,
 				0DEB25AA2B8392C900B07C08 /* Preview Content */,
@@ -156,7 +170,9 @@
 			files = (
 				0DEB25B32B839EF900B07C08 /* Model.swift in Sources */,
 				0DEB25A72B8392C700B07C08 /* CollectView.swift in Sources */,
+				0DC176702B98850A00C6CEA1 /* CollectByModel.swift in Sources */,
 				0DEB25A52B8392C700B07C08 /* Mr__CombineApp.swift in Sources */,
+				0DC1766D2B9884BE00C6CEA1 /* CollectBy.swift in Sources */,
 				0DEB25B52B83B1F800B07C08 /* HeaderView.swift in Sources */,
 				0DC1766A2B98827300C6CEA1 /* MainView.swift in Sources */,
 			);

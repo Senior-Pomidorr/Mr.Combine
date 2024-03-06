@@ -17,6 +17,9 @@ struct MainView: View {
                 NavigationLink("CollectBy: ") {
                     CollectBy()
                 }
+                NavigationLink("CollectByTime: ") {
+                    CollectBy()
+                }
             }
         }
     }

@@ -23,6 +23,9 @@ struct MainView: View {
                 NavigationLink("IgnoreOutput") {
                     IgnoreOutput()
                 }
+                NavigationLink("Reduce") {
+                    ReduceView()
+                }
             }
         }
     }

@@ -18,7 +18,10 @@ struct MainView: View {
                     CollectBy()
                 }
                 NavigationLink("CollectByTime: ") {
-                    CollectBy()
+                    CollectByView()
+                }
+                NavigationLink("IgnoreOutput") {
+                    IgnoreOutput()
                 }
             }
         }

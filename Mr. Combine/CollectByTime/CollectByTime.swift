@@ -40,6 +40,7 @@ final class CollectByTime: ObservableObject {
     }
     
     func stop() {
+        collections.removeAll()
         cancelTimer?.cancel()
     }
 }

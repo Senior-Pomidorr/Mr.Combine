@@ -26,6 +26,9 @@ struct MainView: View {
                 NavigationLink("Reduce") {
                     ReduceView()
                 }
+                NavigationLink("First(where:)") {
+                    FirstWhereView()
+                }
             }
         }
     }

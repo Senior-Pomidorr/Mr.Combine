@@ -29,6 +29,9 @@ struct MainView: View {
                 NavigationLink("First(where:)") {
                     FirstWhereView()
                 }
+                NavigationLink("Output(at: )") {
+                    OutputAtView()
+                }
             }
         }
     }

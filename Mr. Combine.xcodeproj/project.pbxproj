@@ -18,6 +18,8 @@
 		0DD597A62B98FDD700D43870 /* ReduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD597A52B98FDD600D43870 /* ReduceView.swift */; };
 		0DD597A92B9906E700D43870 /* FirstWhereModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD597A82B9906E700D43870 /* FirstWhereModel.swift */; };
 		0DD597AC2B99070900D43870 /* FirstWhereView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD597AB2B99070900D43870 /* FirstWhereView.swift */; };
+		0DD597AE2B9A4D0600D43870 /* OutputAtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD597AD2B9A4D0600D43870 /* OutputAtView.swift */; };
+		0DD597B12B9A4D4700D43870 /* OtputAtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD597B02B9A4D4700D43870 /* OtputAtViewModel.swift */; };
 		0DEB25A52B8392C700B07C08 /* Mr__CombineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB25A42B8392C700B07C08 /* Mr__CombineApp.swift */; };
 		0DEB25A72B8392C700B07C08 /* CollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB25A62B8392C700B07C08 /* CollectView.swift */; };
 		0DEB25A92B8392C900B07C08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB25A82B8392C900B07C08 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 		0DD597A52B98FDD600D43870 /* ReduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduceView.swift; sourceTree = "<group>"; };
 		0DD597A82B9906E700D43870 /* FirstWhereModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWhereModel.swift; sourceTree = "<group>"; };
 		0DD597AB2B99070900D43870 /* FirstWhereView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWhereView.swift; sourceTree = "<group>"; };
+		0DD597AD2B9A4D0600D43870 /* OutputAtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputAtView.swift; sourceTree = "<group>"; };
+		0DD597B02B9A4D4700D43870 /* OtputAtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtputAtViewModel.swift; sourceTree = "<group>"; };
 		0DEB25A12B8392C700B07C08 /* Mr. Combine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr. Combine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DEB25A42B8392C700B07C08 /* Mr__CombineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mr__CombineApp.swift; sourceTree = "<group>"; };
 		0DEB25A62B8392C700B07C08 /* CollectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectView.swift; sourceTree = "<group>"; };
@@ -112,6 +116,15 @@
 			path = FirstWhere;
 			sourceTree = "<group>";
 		};
+		0DD597AF2B9A4D0B00D43870 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				0DD597B02B9A4D4700D43870 /* OtputAtViewModel.swift */,
+				0DD597AD2B9A4D0600D43870 /* OutputAtView.swift */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
 		0DEB25982B8392C700B07C08 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +152,7 @@
 				0DC176782B98F06400C6CEA1 /* IgnoreOutput */,
 				0DD597A72B98FDDE00D43870 /* Reduce */,
 				0DD597AA2B9906EC00D43870 /* FirstWhere */,
+				0DD597AF2B9A4D0B00D43870 /* Output */,
 				0DEB25B42B83B1F800B07C08 /* HeaderView.swift */,
 				0DEB25A82B8392C900B07C08 /* Assets.xcassets */,
 				0DEB25AA2B8392C900B07C08 /* Preview Content */,
@@ -228,6 +242,7 @@
 				0DEB25B32B839EF900B07C08 /* Model.swift in Sources */,
 				0DD597A42B98FDA700D43870 /* ReduceViewModel.swift in Sources */,
 				0DC176752B98D3CF00C6CEA1 /* CollectByView.swift in Sources */,
+				0DD597B12B9A4D4700D43870 /* OtputAtViewModel.swift in Sources */,
 				0DEB25A72B8392C700B07C08 /* CollectView.swift in Sources */,
 				0DD597A62B98FDD700D43870 /* ReduceView.swift in Sources */,
 				0DC176702B98850A00C6CEA1 /* CollectByModel.swift in Sources */,
@@ -238,6 +253,7 @@
 				0DEB25B52B83B1F800B07C08 /* HeaderView.swift in Sources */,
 				0DC176722B98CF0A00C6CEA1 /* CollectByTime.swift in Sources */,
 				0DC1766A2B98827300C6CEA1 /* MainView.swift in Sources */,
+				0DD597AE2B9A4D0600D43870 /* OutputAtView.swift in Sources */,
 				0DC1767A2B98F09A00C6CEA1 /* IgnoreOutputVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

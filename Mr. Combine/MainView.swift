@@ -35,8 +35,14 @@ struct MainView: View {
                 NavigationLink("Output(In: )") {
                     OutputInView()
                 }
-                NavigationLink("ReceieveOn") {
-                    OutputInView()
+                NavigationLink("ReceiveOn") {
+                    ReceiveOnView()
+                }
+                NavigationLink("SubscribeOn") {
+                    SubscribeOnView()
+                }
+                NavigationLink("Assign(to: )") {
+                    AssigntToView()
                 }
             }
         }

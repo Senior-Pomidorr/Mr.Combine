@@ -43,5 +43,4 @@ final class ReceiveOnVM: ObservableObject {
             }
             .store(in: &cancellabeles)
     }
-    
 }

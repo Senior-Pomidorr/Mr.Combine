@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ReceieveOnView: View {
+struct ReceiveOnView: View {
     @StateObject private var vm = ReceiveOnVM()
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                HeaderView("ReceieveOn",
+                HeaderView("Receive(on: )",
                            subtitle: "Introduction",
                            desc: "The receive operator will move items coming down the pipeline to another pipeline (thread).")
                 
@@ -33,5 +33,5 @@ struct ReceieveOnView: View {
 
 
 #Preview {
-    ReceieveOnView()
+    ReceiveOnView()
 }

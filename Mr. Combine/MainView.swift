@@ -26,13 +26,16 @@ struct MainView: View {
                 NavigationLink("Reduce") {
                     ReduceView()
                 }
-                NavigationLink("First(where:)") {
+                NavigationLink("First(where: )") {
                     FirstWhereView()
                 }
                 NavigationLink("Output(at: )") {
                     OutputAtView()
                 }
                 NavigationLink("Output(In: )") {
+                    OutputInView()
+                }
+                NavigationLink("ReceieveOn") {
                     OutputInView()
                 }
             }

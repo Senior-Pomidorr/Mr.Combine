@@ -14,6 +14,8 @@
 		0DC176752B98D3CF00C6CEA1 /* CollectByView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC176742B98D3CF00C6CEA1 /* CollectByView.swift */; };
 		0DC176772B98F05F00C6CEA1 /* IgnoreOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC176762B98F05F00C6CEA1 /* IgnoreOutput.swift */; };
 		0DC1767A2B98F09A00C6CEA1 /* IgnoreOutputVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC176792B98F09A00C6CEA1 /* IgnoreOutputVM.swift */; };
+		0DD496872B9CBA4D00F36A92 /* OutputInVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD496862B9CBA4D00F36A92 /* OutputInVm.swift */; };
+		0DD4968A2B9CBA6A00F36A92 /* OutputInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD496892B9CBA6A00F36A92 /* OutputInView.swift */; };
 		0DD597A42B98FDA700D43870 /* ReduceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD597A32B98FDA700D43870 /* ReduceViewModel.swift */; };
 		0DD597A62B98FDD700D43870 /* ReduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD597A52B98FDD600D43870 /* ReduceView.swift */; };
 		0DD597A92B9906E700D43870 /* FirstWhereModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD597A82B9906E700D43870 /* FirstWhereModel.swift */; };
@@ -36,6 +38,8 @@
 		0DC176742B98D3CF00C6CEA1 /* CollectByView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectByView.swift; sourceTree = "<group>"; };
 		0DC176762B98F05F00C6CEA1 /* IgnoreOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreOutput.swift; sourceTree = "<group>"; };
 		0DC176792B98F09A00C6CEA1 /* IgnoreOutputVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreOutputVM.swift; sourceTree = "<group>"; };
+		0DD496862B9CBA4D00F36A92 /* OutputInVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputInVm.swift; sourceTree = "<group>"; };
+		0DD496892B9CBA6A00F36A92 /* OutputInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputInView.swift; sourceTree = "<group>"; };
 		0DD597A32B98FDA700D43870 /* ReduceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduceViewModel.swift; sourceTree = "<group>"; };
 		0DD597A52B98FDD600D43870 /* ReduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduceView.swift; sourceTree = "<group>"; };
 		0DD597A82B9906E700D43870 /* FirstWhereModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWhereModel.swift; sourceTree = "<group>"; };
@@ -98,6 +102,15 @@
 			path = IgnoreOutput;
 			sourceTree = "<group>";
 		};
+		0DD496882B9CBA5100F36A92 /* OutputIn */ = {
+			isa = PBXGroup;
+			children = (
+				0DD496862B9CBA4D00F36A92 /* OutputInVm.swift */,
+				0DD496892B9CBA6A00F36A92 /* OutputInView.swift */,
+			);
+			path = OutputIn;
+			sourceTree = "<group>";
+		};
 		0DD597A72B98FDDE00D43870 /* Reduce */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +166,7 @@
 				0DD597A72B98FDDE00D43870 /* Reduce */,
 				0DD597AA2B9906EC00D43870 /* FirstWhere */,
 				0DD597AF2B9A4D0B00D43870 /* Output */,
+				0DD496882B9CBA5100F36A92 /* OutputIn */,
 				0DEB25B42B83B1F800B07C08 /* HeaderView.swift */,
 				0DEB25A82B8392C900B07C08 /* Assets.xcassets */,
 				0DEB25AA2B8392C900B07C08 /* Preview Content */,
@@ -238,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD496872B9CBA4D00F36A92 /* OutputInVm.swift in Sources */,
 				0DC176772B98F05F00C6CEA1 /* IgnoreOutput.swift in Sources */,
 				0DEB25B32B839EF900B07C08 /* Model.swift in Sources */,
 				0DD597A42B98FDA700D43870 /* ReduceViewModel.swift in Sources */,
@@ -245,6 +260,7 @@
 				0DD597B12B9A4D4700D43870 /* OtputAtViewModel.swift in Sources */,
 				0DEB25A72B8392C700B07C08 /* CollectView.swift in Sources */,
 				0DD597A62B98FDD700D43870 /* ReduceView.swift in Sources */,
+				0DD4968A2B9CBA6A00F36A92 /* OutputInView.swift in Sources */,
 				0DC176702B98850A00C6CEA1 /* CollectByModel.swift in Sources */,
 				0DEB25A52B8392C700B07C08 /* Mr__CombineApp.swift in Sources */,
 				0DD597AC2B99070900D43870 /* FirstWhereView.swift in Sources */,

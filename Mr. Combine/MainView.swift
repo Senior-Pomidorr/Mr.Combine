@@ -32,6 +32,9 @@ struct MainView: View {
                 NavigationLink("Output(at: )") {
                     OutputAtView()
                 }
+                NavigationLink("Output(In: )") {
+                    OutputInView()
+                }
             }
         }
     }

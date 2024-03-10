@@ -44,6 +44,9 @@ struct MainView: View {
                 NavigationLink("Assign(to: )") {
                     AssigntToView()
                 }
+                NavigationLink("Sink") {
+                    SinkReciveValue()
+                }
             }
         }
     }

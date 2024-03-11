@@ -50,6 +50,9 @@ struct MainView: View {
                 NavigationLink("Any Publisher") {
                     AnyPublisherView()
                 }
+                NavigationLink("CombineLatest") {
+                    CombineLatestView()
+                }
             }
         }
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D30F9192B9EC2CA0060F398 /* AnyPublisherVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F9182B9EC2CA0060F398 /* AnyPublisherVM.swift */; };
+		0D30F91C2B9EC2EE0060F398 /* AnyPublisherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F91B2B9EC2EE0060F398 /* AnyPublisherView.swift */; };
 		0DC1766A2B98827300C6CEA1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC176692B98827300C6CEA1 /* MainView.swift */; };
 		0DC1766D2B9884BE00C6CEA1 /* CollectBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC1766C2B9884BE00C6CEA1 /* CollectBy.swift */; };
 		0DC176702B98850A00C6CEA1 /* CollectByModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC1766F2B98850A00C6CEA1 /* CollectByModel.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D30F9182B9EC2CA0060F398 /* AnyPublisherVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPublisherVM.swift; sourceTree = "<group>"; };
+		0D30F91B2B9EC2EE0060F398 /* AnyPublisherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPublisherView.swift; sourceTree = "<group>"; };
 		0DC176692B98827300C6CEA1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0DC1766C2B9884BE00C6CEA1 /* CollectBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectBy.swift; sourceTree = "<group>"; };
 		0DC1766F2B98850A00C6CEA1 /* CollectByModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectByModel.swift; sourceTree = "<group>"; };
@@ -82,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D30F91A2B9EC2D60060F398 /* AnyPublisherVM */ = {
+			isa = PBXGroup;
+			children = (
+				0D30F9182B9EC2CA0060F398 /* AnyPublisherVM.swift */,
+				0D30F91B2B9EC2EE0060F398 /* AnyPublisherView.swift */,
+			);
+			path = AnyPublisherVM;
+			sourceTree = "<group>";
+		};
 		0DC1766B2B9882EF00C6CEA1 /* CollectView */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +236,7 @@
 				0DD496922B9D021200F36A92 /* SubscribeOn */,
 				0DD496972B9D07A200F36A92 /* AssignTo */,
 				0DD4969C2B9E10EE00F36A92 /* SinkReceiveValue */,
+				0D30F91A2B9EC2D60060F398 /* AnyPublisherVM */,
 				0DEB25B42B83B1F800B07C08 /* HeaderView.swift */,
 				0DEB25A82B8392C900B07C08 /* Assets.xcassets */,
 				0DEB25AA2B8392C900B07C08 /* Preview Content */,
@@ -316,12 +330,14 @@
 				0DD597A42B98FDA700D43870 /* ReduceViewModel.swift in Sources */,
 				0DC176752B98D3CF00C6CEA1 /* CollectByView.swift in Sources */,
 				0DD597B12B9A4D4700D43870 /* OtputAtViewModel.swift in Sources */,
+				0D30F9192B9EC2CA0060F398 /* AnyPublisherVM.swift in Sources */,
 				0DEB25A72B8392C700B07C08 /* CollectView.swift in Sources */,
 				0DD597A62B98FDD700D43870 /* ReduceView.swift in Sources */,
 				0DD4968A2B9CBA6A00F36A92 /* OutputInView.swift in Sources */,
 				0DC176702B98850A00C6CEA1 /* CollectByModel.swift in Sources */,
 				0DD496992B9D07B500F36A92 /* AssigntToView.swift in Sources */,
 				0DEB25A52B8392C700B07C08 /* Mr__CombineApp.swift in Sources */,
+				0D30F91C2B9EC2EE0060F398 /* AnyPublisherView.swift in Sources */,
 				0DD597AC2B99070900D43870 /* FirstWhereView.swift in Sources */,
 				0DD496912B9D020A00F36A92 /* SubscribeOnVM.swift in Sources */,
 				0DD597A92B9906E700D43870 /* FirstWhereModel.swift in Sources */,

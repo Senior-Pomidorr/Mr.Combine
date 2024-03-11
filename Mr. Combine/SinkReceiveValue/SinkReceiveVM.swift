@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 /* «The sink subscriber will allow you to just receive values and do anything you want with them.
-    There is also an option to run code when the pipeline completes, whether it completed from an error or just naturally.»
+ There is also an option to run code when the pipeline completes, whether it completed from an error or just naturally.»
  */
 
 final class SinkReceiveVM: ObservableObject {
@@ -31,8 +31,8 @@ final class SinkReceiveVM: ObservableObject {
                     nToz.append(value)
                 }
             }
-            /*If the value coming through the pipeline was always assigned to the same @Published property,
-              you could use the assign(to:) subscriber instead.*/
+        /*If the value coming through the pipeline was always assigned to the same @Published property,
+         you could use the assign(to:) subscriber instead.*/
     }
     
     func fetch() {

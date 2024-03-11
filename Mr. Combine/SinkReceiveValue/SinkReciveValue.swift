@@ -14,7 +14,7 @@ struct SinkReciveValue: View {
             VStack(spacing: 20) {
                 HeaderView("Sink",
                            subtitle: "Introduction",
-                           desc: "«The sink subscriber allows you to access every value that comes                               down the pipeline and do something with it.")
+                           desc: "«The sink subscriber allows you to access every value that comes down the pipeline and do something with it.")
                 Button("Add name") {
                     vm.fetch()
                 }

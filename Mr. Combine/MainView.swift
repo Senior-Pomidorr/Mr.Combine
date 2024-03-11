@@ -47,6 +47,9 @@ struct MainView: View {
                 NavigationLink("Sink") {
                     SinkReciveValue()
                 }
+                NavigationLink("Any Publisher") {
+                    AnyPublisherView()
+                }
             }
         }
     }

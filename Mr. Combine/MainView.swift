@@ -59,6 +59,9 @@ struct MainView: View {
                 NavigationLink("MergeView") {
                     MergeView()
                 }
+                NavigationLink("SwitchToLatest") {
+                    SwitchToLatestView()
+                }
             }
         }
     }

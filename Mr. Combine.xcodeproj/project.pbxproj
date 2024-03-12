@@ -15,6 +15,8 @@
 		0D30F9262B9F760D0060F398 /* FlatMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F9252B9F760D0060F398 /* FlatMapView.swift */; };
 		0D30F9282BA0D4940060F398 /* Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F9272BA0D4940060F398 /* Merge.swift */; };
 		0D30F92B2BA0D6660060F398 /* MergeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F92A2BA0D6660060F398 /* MergeView.swift */; };
+		0D30F92D2BA0D98B0060F398 /* SwitchToLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F92C2BA0D98B0060F398 /* SwitchToLatest.swift */; };
+		0D30F9302BA0D9B20060F398 /* SwitchToLatestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F92F2BA0D9B20060F398 /* SwitchToLatestView.swift */; };
 		0DC1766A2B98827300C6CEA1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC176692B98827300C6CEA1 /* MainView.swift */; };
 		0DC1766D2B9884BE00C6CEA1 /* CollectBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC1766C2B9884BE00C6CEA1 /* CollectBy.swift */; };
 		0DC176702B98850A00C6CEA1 /* CollectByModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC1766F2B98850A00C6CEA1 /* CollectByModel.swift */; };
@@ -55,6 +57,8 @@
 		0D30F9252B9F760D0060F398 /* FlatMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatMapView.swift; sourceTree = "<group>"; };
 		0D30F9272BA0D4940060F398 /* Merge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merge.swift; sourceTree = "<group>"; };
 		0D30F92A2BA0D6660060F398 /* MergeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeView.swift; sourceTree = "<group>"; };
+		0D30F92C2BA0D98B0060F398 /* SwitchToLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToLatest.swift; sourceTree = "<group>"; };
+		0D30F92F2BA0D9B20060F398 /* SwitchToLatestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToLatestView.swift; sourceTree = "<group>"; };
 		0DC176692B98827300C6CEA1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0DC1766C2B9884BE00C6CEA1 /* CollectBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectBy.swift; sourceTree = "<group>"; };
 		0DC1766F2B98850A00C6CEA1 /* CollectByModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectByModel.swift; sourceTree = "<group>"; };
@@ -132,6 +136,15 @@
 				0D30F92A2BA0D6660060F398 /* MergeView.swift */,
 			);
 			path = Merge;
+			sourceTree = "<group>";
+		};
+		0D30F92E2BA0D9930060F398 /* SwitchToLatest */ = {
+			isa = PBXGroup;
+			children = (
+				0D30F92C2BA0D98B0060F398 /* SwitchToLatest.swift */,
+				0D30F92F2BA0D9B20060F398 /* SwitchToLatestView.swift */,
+			);
+			path = SwitchToLatest;
 			sourceTree = "<group>";
 		};
 		0DC1766B2B9882EF00C6CEA1 /* CollectView */ = {
@@ -279,6 +292,7 @@
 				0D30F91F2B9F420B0060F398 /* CombineLatest */,
 				0D30F9242B9F75ED0060F398 /* FlatMap */,
 				0D30F9292BA0D4A00060F398 /* Merge */,
+				0D30F92E2BA0D9930060F398 /* SwitchToLatest */,
 				0DEB25B42B83B1F800B07C08 /* HeaderView.swift */,
 				0DEB25A82B8392C900B07C08 /* Assets.xcassets */,
 				0DEB25AA2B8392C900B07C08 /* Preview Content */,
@@ -373,10 +387,12 @@
 				0DD597A42B98FDA700D43870 /* ReduceViewModel.swift in Sources */,
 				0DC176752B98D3CF00C6CEA1 /* CollectByView.swift in Sources */,
 				0DD597B12B9A4D4700D43870 /* OtputAtViewModel.swift in Sources */,
+				0D30F9302BA0D9B20060F398 /* SwitchToLatestView.swift in Sources */,
 				0D30F9192B9EC2CA0060F398 /* AnyPublisherVM.swift in Sources */,
 				0DEB25A72B8392C700B07C08 /* CollectView.swift in Sources */,
 				0DD597A62B98FDD700D43870 /* ReduceView.swift in Sources */,
 				0DD4968A2B9CBA6A00F36A92 /* OutputInView.swift in Sources */,
+				0D30F92D2BA0D98B0060F398 /* SwitchToLatest.swift in Sources */,
 				0DC176702B98850A00C6CEA1 /* CollectByModel.swift in Sources */,
 				0DD496992B9D07B500F36A92 /* AssigntToView.swift in Sources */,
 				0DEB25A52B8392C700B07C08 /* Mr__CombineApp.swift in Sources */,

@@ -53,6 +53,9 @@ struct MainView: View {
                 NavigationLink("CombineLatest") {
                     CombineLatestView()
                 }
+                NavigationLink("FlatMap") {
+                    FlatMapView()
+                }
             }
         }
     }

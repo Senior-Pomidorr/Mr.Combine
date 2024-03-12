@@ -11,6 +11,8 @@
 		0D30F91C2B9EC2EE0060F398 /* AnyPublisherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F91B2B9EC2EE0060F398 /* AnyPublisherView.swift */; };
 		0D30F91E2B9F42020060F398 /* CombineLatestVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F91D2B9F42020060F398 /* CombineLatestVM.swift */; };
 		0D30F9212B9F4B840060F398 /* CombineLatestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F9202B9F4B840060F398 /* CombineLatestView.swift */; };
+		0D30F9232B9F75E80060F398 /* FlatMapVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F9222B9F75E80060F398 /* FlatMapVM.swift */; };
+		0D30F9262B9F760D0060F398 /* FlatMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F9252B9F760D0060F398 /* FlatMapView.swift */; };
 		0DC1766A2B98827300C6CEA1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC176692B98827300C6CEA1 /* MainView.swift */; };
 		0DC1766D2B9884BE00C6CEA1 /* CollectBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC1766C2B9884BE00C6CEA1 /* CollectBy.swift */; };
 		0DC176702B98850A00C6CEA1 /* CollectByModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC1766F2B98850A00C6CEA1 /* CollectByModel.swift */; };
@@ -47,6 +49,8 @@
 		0D30F91B2B9EC2EE0060F398 /* AnyPublisherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPublisherView.swift; sourceTree = "<group>"; };
 		0D30F91D2B9F42020060F398 /* CombineLatestVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineLatestVM.swift; sourceTree = "<group>"; };
 		0D30F9202B9F4B840060F398 /* CombineLatestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineLatestView.swift; sourceTree = "<group>"; };
+		0D30F9222B9F75E80060F398 /* FlatMapVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatMapVM.swift; sourceTree = "<group>"; };
+		0D30F9252B9F760D0060F398 /* FlatMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatMapView.swift; sourceTree = "<group>"; };
 		0DC176692B98827300C6CEA1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0DC1766C2B9884BE00C6CEA1 /* CollectBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectBy.swift; sourceTree = "<group>"; };
 		0DC1766F2B98850A00C6CEA1 /* CollectByModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectByModel.swift; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 				0D30F9202B9F4B840060F398 /* CombineLatestView.swift */,
 			);
 			path = CombineLatest;
+			sourceTree = "<group>";
+		};
+		0D30F9242B9F75ED0060F398 /* FlatMap */ = {
+			isa = PBXGroup;
+			children = (
+				0D30F9222B9F75E80060F398 /* FlatMapVM.swift */,
+				0D30F9252B9F760D0060F398 /* FlatMapView.swift */,
+			);
+			path = FlatMap;
 			sourceTree = "<group>";
 		};
 		0DC1766B2B9882EF00C6CEA1 /* CollectView */ = {
@@ -251,6 +264,7 @@
 				0DD4969C2B9E10EE00F36A92 /* SinkReceiveValue */,
 				0D30F91A2B9EC2D60060F398 /* AnyPublisherVM */,
 				0D30F91F2B9F420B0060F398 /* CombineLatest */,
+				0D30F9242B9F75ED0060F398 /* FlatMap */,
 				0DEB25B42B83B1F800B07C08 /* HeaderView.swift */,
 				0DEB25A82B8392C900B07C08 /* Assets.xcassets */,
 				0DEB25AA2B8392C900B07C08 /* Preview Content */,
@@ -352,8 +366,10 @@
 				0DD496992B9D07B500F36A92 /* AssigntToView.swift in Sources */,
 				0DEB25A52B8392C700B07C08 /* Mr__CombineApp.swift in Sources */,
 				0D30F91C2B9EC2EE0060F398 /* AnyPublisherView.swift in Sources */,
+				0D30F9262B9F760D0060F398 /* FlatMapView.swift in Sources */,
 				0DD597AC2B99070900D43870 /* FirstWhereView.swift in Sources */,
 				0DD496912B9D020A00F36A92 /* SubscribeOnVM.swift in Sources */,
+				0D30F9232B9F75E80060F398 /* FlatMapVM.swift in Sources */,
 				0DD597A92B9906E700D43870 /* FirstWhereModel.swift in Sources */,
 				0DD496962B9D079A00F36A92 /* AssignToVm.swift in Sources */,
 				0DC1766D2B9884BE00C6CEA1 /* CollectBy.swift in Sources */,

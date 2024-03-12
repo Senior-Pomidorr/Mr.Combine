@@ -22,7 +22,7 @@ final class CombineLatestVM: ObservableObject {
     @Published var artData = ArtData(artist: "", color: .clear)
     
     func fetch() {
-        let artist = ["Picasso", "Michelangelo", "van Gogh", "da Vinci", "Monet"].publisher
+        let artist = ["Picasso", "Michelangelo", "van Gogh", "da Vinci", "Monet"].randomElement().publisher
         let colors = [Color.red, Color.orange, Color.blue, Color.purple, Color.green].publisher
         
         _ = artist

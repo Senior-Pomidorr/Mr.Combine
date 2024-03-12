@@ -56,6 +56,9 @@ struct MainView: View {
                 NavigationLink("FlatMap") {
                     FlatMapView()
                 }
+                NavigationLink("MergeView") {
+                    MergeView()
+                }
             }
         }
     }

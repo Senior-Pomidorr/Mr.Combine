@@ -13,7 +13,7 @@ struct CombineLatestView: View {
         NavigationStack {
             VStack(spacing: 20) {
                 HeaderView("CombineLatest",
-                           subtitle: "More Than Two",
+                           subtitle: "Introduction",
                            desc: "If you're working with more than two publishers then you will have to keep adding more input parameters into the closure.")
                
                 VStack {

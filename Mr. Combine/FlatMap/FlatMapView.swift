@@ -13,7 +13,7 @@ struct FlatMapView: View {
         NavigationStack {
             VStack(spacing: 20) {
                 HeaderView("FlatMap",
-                           subtitle: "More Than Two",
+                           subtitle: "Introduction",
                            desc: "«The flatMap operator can be used to create a new publisher for each item that comes through the pipeline.")
                
                 Text( vm.names.joined(separator: ","))

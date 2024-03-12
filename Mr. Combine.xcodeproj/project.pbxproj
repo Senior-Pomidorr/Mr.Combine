@@ -17,6 +17,8 @@
 		0D30F92B2BA0D6660060F398 /* MergeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F92A2BA0D6660060F398 /* MergeView.swift */; };
 		0D30F92D2BA0D98B0060F398 /* SwitchToLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F92C2BA0D98B0060F398 /* SwitchToLatest.swift */; };
 		0D30F9302BA0D9B20060F398 /* SwitchToLatestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F92F2BA0D9B20060F398 /* SwitchToLatestView.swift */; };
+		0D30F9322BA0EAA70060F398 /* Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F9312BA0EAA70060F398 /* Zip.swift */; };
+		0D30F9352BA0EAE70060F398 /* ZipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F9342BA0EAE70060F398 /* ZipView.swift */; };
 		0DC1766A2B98827300C6CEA1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC176692B98827300C6CEA1 /* MainView.swift */; };
 		0DC1766D2B9884BE00C6CEA1 /* CollectBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC1766C2B9884BE00C6CEA1 /* CollectBy.swift */; };
 		0DC176702B98850A00C6CEA1 /* CollectByModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC1766F2B98850A00C6CEA1 /* CollectByModel.swift */; };
@@ -40,7 +42,7 @@
 		0DD597AC2B99070900D43870 /* FirstWhereView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD597AB2B99070900D43870 /* FirstWhereView.swift */; };
 		0DD597AE2B9A4D0600D43870 /* OutputAtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD597AD2B9A4D0600D43870 /* OutputAtView.swift */; };
 		0DD597B12B9A4D4700D43870 /* OtputAtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD597B02B9A4D4700D43870 /* OtputAtViewModel.swift */; };
-		0DEB25A52B8392C700B07C08 /* Mr__CombineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB25A42B8392C700B07C08 /* Mr__CombineApp.swift */; };
+		0DEB25A52B8392C700B07C08 /* MrCombineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB25A42B8392C700B07C08 /* MrCombineApp.swift */; };
 		0DEB25A72B8392C700B07C08 /* CollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB25A62B8392C700B07C08 /* CollectView.swift */; };
 		0DEB25A92B8392C900B07C08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB25A82B8392C900B07C08 /* Assets.xcassets */; };
 		0DEB25AC2B8392C900B07C08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB25AB2B8392C900B07C08 /* Preview Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		0D30F92A2BA0D6660060F398 /* MergeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeView.swift; sourceTree = "<group>"; };
 		0D30F92C2BA0D98B0060F398 /* SwitchToLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToLatest.swift; sourceTree = "<group>"; };
 		0D30F92F2BA0D9B20060F398 /* SwitchToLatestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToLatestView.swift; sourceTree = "<group>"; };
+		0D30F9312BA0EAA70060F398 /* Zip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zip.swift; sourceTree = "<group>"; };
+		0D30F9342BA0EAE70060F398 /* ZipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipView.swift; sourceTree = "<group>"; };
 		0DC176692B98827300C6CEA1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0DC1766C2B9884BE00C6CEA1 /* CollectBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectBy.swift; sourceTree = "<group>"; };
 		0DC1766F2B98850A00C6CEA1 /* CollectByModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectByModel.swift; sourceTree = "<group>"; };
@@ -83,7 +87,7 @@
 		0DD597AD2B9A4D0600D43870 /* OutputAtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputAtView.swift; sourceTree = "<group>"; };
 		0DD597B02B9A4D4700D43870 /* OtputAtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtputAtViewModel.swift; sourceTree = "<group>"; };
 		0DEB25A12B8392C700B07C08 /* Mr. Combine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr. Combine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DEB25A42B8392C700B07C08 /* Mr__CombineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mr__CombineApp.swift; sourceTree = "<group>"; };
+		0DEB25A42B8392C700B07C08 /* MrCombineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MrCombineApp.swift; sourceTree = "<group>"; };
 		0DEB25A62B8392C700B07C08 /* CollectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectView.swift; sourceTree = "<group>"; };
 		0DEB25A82B8392C900B07C08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DEB25AB2B8392C900B07C08 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -145,6 +149,15 @@
 				0D30F92F2BA0D9B20060F398 /* SwitchToLatestView.swift */,
 			);
 			path = SwitchToLatest;
+			sourceTree = "<group>";
+		};
+		0D30F9332BA0EAB10060F398 /* Zip */ = {
+			isa = PBXGroup;
+			children = (
+				0D30F9312BA0EAA70060F398 /* Zip.swift */,
+				0D30F9342BA0EAE70060F398 /* ZipView.swift */,
+			);
+			path = Zip;
 			sourceTree = "<group>";
 		};
 		0DC1766B2B9882EF00C6CEA1 /* CollectView */ = {
@@ -274,7 +287,7 @@
 		0DEB25A32B8392C700B07C08 /* Mr. Combine */ = {
 			isa = PBXGroup;
 			children = (
-				0DEB25A42B8392C700B07C08 /* Mr__CombineApp.swift */,
+				0DEB25A42B8392C700B07C08 /* MrCombineApp.swift */,
 				0DC176692B98827300C6CEA1 /* MainView.swift */,
 				0DC1766B2B9882EF00C6CEA1 /* CollectView */,
 				0DC1766E2B9884D900C6CEA1 /* CollectBy */,
@@ -293,6 +306,7 @@
 				0D30F9242B9F75ED0060F398 /* FlatMap */,
 				0D30F9292BA0D4A00060F398 /* Merge */,
 				0D30F92E2BA0D9930060F398 /* SwitchToLatest */,
+				0D30F9332BA0EAB10060F398 /* Zip */,
 				0DEB25B42B83B1F800B07C08 /* HeaderView.swift */,
 				0DEB25A82B8392C900B07C08 /* Assets.xcassets */,
 				0DEB25AA2B8392C900B07C08 /* Preview Content */,
@@ -395,12 +409,13 @@
 				0D30F92D2BA0D98B0060F398 /* SwitchToLatest.swift in Sources */,
 				0DC176702B98850A00C6CEA1 /* CollectByModel.swift in Sources */,
 				0DD496992B9D07B500F36A92 /* AssigntToView.swift in Sources */,
-				0DEB25A52B8392C700B07C08 /* Mr__CombineApp.swift in Sources */,
+				0DEB25A52B8392C700B07C08 /* MrCombineApp.swift in Sources */,
 				0D30F91C2B9EC2EE0060F398 /* AnyPublisherView.swift in Sources */,
 				0D30F9262B9F760D0060F398 /* FlatMapView.swift in Sources */,
 				0DD597AC2B99070900D43870 /* FirstWhereView.swift in Sources */,
 				0DD496912B9D020A00F36A92 /* SubscribeOnVM.swift in Sources */,
 				0D30F9232B9F75E80060F398 /* FlatMapVM.swift in Sources */,
+				0D30F9352BA0EAE70060F398 /* ZipView.swift in Sources */,
 				0D30F9282BA0D4940060F398 /* Merge.swift in Sources */,
 				0DD597A92B9906E700D43870 /* FirstWhereModel.swift in Sources */,
 				0DD496962B9D079A00F36A92 /* AssignToVm.swift in Sources */,
@@ -411,6 +426,7 @@
 				0DC176722B98CF0A00C6CEA1 /* CollectByTime.swift in Sources */,
 				0DC1766A2B98827300C6CEA1 /* MainView.swift in Sources */,
 				0DD597AE2B9A4D0600D43870 /* OutputAtView.swift in Sources */,
+				0D30F9322BA0EAA70060F398 /* Zip.swift in Sources */,
 				0DC1767A2B98F09A00C6CEA1 /* IgnoreOutputVM.swift in Sources */,
 				0DD496942B9D023700F36A92 /* SubscribeOnView.swift in Sources */,
 				0D30F91E2B9F42020060F398 /* CombineLatestVM.swift in Sources */,

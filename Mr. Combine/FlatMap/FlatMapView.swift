@@ -16,7 +16,7 @@ struct FlatMapView: View {
                            subtitle: "Introduction",
                            desc: "«The flatMap operator can be used to create a new publisher for each item that comes through the pipeline.")
                
-                Text( vm.names.joined(separator: ","))
+                Text( vm.names.joined(separator: ", "))
                     .padding(.horizontal)
                 
                 HStack {

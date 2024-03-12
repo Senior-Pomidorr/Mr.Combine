@@ -39,6 +39,7 @@ struct FlatMapView: View {
                         Text(getPercent(value.probability))
                     }
                 }
+                .listStyle(.plain)
             }
             .font(.title)
         }

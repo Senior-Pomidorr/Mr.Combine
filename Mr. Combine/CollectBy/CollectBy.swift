@@ -30,9 +30,6 @@ struct CollectBy: View {
             }
             .font(.title)
         }
-        //        .alert(item: $vm.error, content: { error in
-        //            Alert(title: Text("Error"), message: Text(error.description))
-        //        })
         .onAppear() {
             vm.fetch()
         }

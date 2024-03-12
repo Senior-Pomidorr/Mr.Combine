@@ -15,21 +15,17 @@ struct SwitchToLatestView: View {
                 HeaderView("SwitchToLatest",
                            subtitle: "Introduction",
                            desc: "The switchToLatest operator will use only the latest publisher that comes through the pipeline.")
-               
-                Text( vm.names.joined(separator: ","))
-                    .padding(.horizontal)
-                
-                HStack {
-                    Button("Get Score") {
-                        vm.fetchResults()
-                    }
-                    .padding(.horizontal)
-                    Button("Clear") {
+
+                Button("Clear") {
                         vm.removAll()
                     }
-                    .padding(.horizontal)
-                }
                 
+                List(vm.names, id: \.self) { value in
+                    Button(value) {
+                        vm.fetchNameDetails.send(value)
+                    }
+                }
+                .listStyle(.plain)
                 
                 List(vm.nameResult, id: \.name) { value in
                     HStack {
@@ -39,6 +35,7 @@ struct SwitchToLatestView: View {
                         Text(getPercent(value.probability))
                     }
                 }
+                .listStyle(.plain)
             }
             .font(.title)
         }

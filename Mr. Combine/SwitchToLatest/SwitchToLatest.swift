@@ -20,10 +20,11 @@ struct NameResultTwo: Decodable {
 final class SwitchToLatest: ObservableObject {
     @Published var names = ["Kelly", "Madison", "Pat", "Alexus", "Taylor", "Tracy"]
     @Published var nameResult: [NameResultTwo] = .init()
+    var fetchNameDetails = PassthroughSubject<String, Never>()
     private var cancellable: Set<AnyCancellable> = .init()
     
-    func fetchResults() {
-        names.publisher
+    init() {
+        fetchNameDetails
             .map { name -> (String, URL) in
                 return (name, URL(string: "https://api.genderize.io/?name=\(name)")!)
             }
@@ -32,6 +33,7 @@ final class SwitchToLatest: ObservableObject {
                     .map { $0.data }
                     .decode(type: NameResultTwo.self, decoder: JSONDecoder())
                     .replaceError(with: NameResultTwo(name: name, gender: "Error"))
+                    .delay(for: 0.5, scheduler: RunLoop.main)
                     .eraseToAnyPublisher()
             }
             .switchToLatest()

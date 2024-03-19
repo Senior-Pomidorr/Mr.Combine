@@ -62,6 +62,9 @@ struct MainView: View {
                 NavigationLink("SwitchToLatest") {
                     SwitchToLatestView()
                 }
+                NavigationLink("Catch") {
+                    CatchView()
+                }
             }
         }
     }

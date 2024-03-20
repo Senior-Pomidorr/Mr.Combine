@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D2692932BAA35D700B9A9CE /* CatchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2692922BAA35D700B9A9CE /* CatchVM.swift */; };
 		0D2692962BAA37EA00B9A9CE /* CatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2692952BAA37EA00B9A9CE /* CatchView.swift */; };
+		0D2692982BAB204500B9A9CE /* TryCatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2692972BAB204500B9A9CE /* TryCatchView.swift */; };
+		0D26929B2BAB208300B9A9CE /* TryCatchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26929A2BAB208300B9A9CE /* TryCatchVM.swift */; };
 		0D30F9192B9EC2CA0060F398 /* AnyPublisherVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F9182B9EC2CA0060F398 /* AnyPublisherVM.swift */; };
 		0D30F91C2B9EC2EE0060F398 /* AnyPublisherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F91B2B9EC2EE0060F398 /* AnyPublisherView.swift */; };
 		0D30F91E2B9F42020060F398 /* CombineLatestVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F91D2B9F42020060F398 /* CombineLatestVM.swift */; };
@@ -55,6 +57,8 @@
 /* Begin PBXFileReference section */
 		0D2692922BAA35D700B9A9CE /* CatchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchVM.swift; sourceTree = "<group>"; };
 		0D2692952BAA37EA00B9A9CE /* CatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchView.swift; sourceTree = "<group>"; };
+		0D2692972BAB204500B9A9CE /* TryCatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryCatchView.swift; sourceTree = "<group>"; };
+		0D26929A2BAB208300B9A9CE /* TryCatchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryCatchVM.swift; sourceTree = "<group>"; };
 		0D30F9182B9EC2CA0060F398 /* AnyPublisherVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPublisherVM.swift; sourceTree = "<group>"; };
 		0D30F91B2B9EC2EE0060F398 /* AnyPublisherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPublisherView.swift; sourceTree = "<group>"; };
 		0D30F91D2B9F42020060F398 /* CombineLatestVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineLatestVM.swift; sourceTree = "<group>"; };
@@ -117,6 +121,15 @@
 				0D2692952BAA37EA00B9A9CE /* CatchView.swift */,
 			);
 			path = Catch;
+			sourceTree = "<group>";
+		};
+		0D2692992BAB204900B9A9CE /* TryCatch */ = {
+			isa = PBXGroup;
+			children = (
+				0D26929A2BAB208300B9A9CE /* TryCatchVM.swift */,
+				0D2692972BAB204500B9A9CE /* TryCatchView.swift */,
+			);
+			path = TryCatch;
 			sourceTree = "<group>";
 		};
 		0D30F91A2B9EC2D60060F398 /* AnyPublisherVM */ = {
@@ -321,6 +334,7 @@
 				0D30F92E2BA0D9930060F398 /* SwitchToLatest */,
 				0D30F9332BA0EAB10060F398 /* Zip */,
 				0D2692942BAA35E400B9A9CE /* Catch */,
+				0D2692992BAB204900B9A9CE /* TryCatch */,
 				0DEB25B42B83B1F800B07C08 /* HeaderView.swift */,
 				0DEB25A82B8392C900B07C08 /* Assets.xcassets */,
 				0DEB25AA2B8392C900B07C08 /* Preview Content */,
@@ -409,6 +423,7 @@
 				0DD496872B9CBA4D00F36A92 /* OutputInVm.swift in Sources */,
 				0D2692962BAA37EA00B9A9CE /* CatchView.swift in Sources */,
 				0DC176772B98F05F00C6CEA1 /* IgnoreOutput.swift in Sources */,
+				0D26929B2BAB208300B9A9CE /* TryCatchVM.swift in Sources */,
 				0D30F92B2BA0D6660060F398 /* MergeView.swift in Sources */,
 				0DD4969E2B9E110C00F36A92 /* SinkReciveValue.swift in Sources */,
 				0DEB25B32B839EF900B07C08 /* Model.swift in Sources */,
@@ -438,6 +453,7 @@
 				0DC1766D2B9884BE00C6CEA1 /* CollectBy.swift in Sources */,
 				0D30F9212B9F4B840060F398 /* CombineLatestView.swift in Sources */,
 				0DEB25B52B83B1F800B07C08 /* HeaderView.swift in Sources */,
+				0D2692982BAB204500B9A9CE /* TryCatchView.swift in Sources */,
 				0DD4968C2B9CF26400F36A92 /* ReceiveOnVM.swift in Sources */,
 				0DC176722B98CF0A00C6CEA1 /* CollectByTime.swift in Sources */,
 				0DC1766A2B98827300C6CEA1 /* MainView.swift in Sources */,

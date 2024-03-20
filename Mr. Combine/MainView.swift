@@ -68,6 +68,9 @@ struct MainView: View {
                 NavigationLink("Try Catch") {
                     TryCatchView()
                 }
+                NavigationLink("Breakpoint") {
+                    BreakpointView()
+                }
             }
         }
     }

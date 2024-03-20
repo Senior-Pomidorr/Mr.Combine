@@ -11,6 +11,8 @@
 		0D2692962BAA37EA00B9A9CE /* CatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2692952BAA37EA00B9A9CE /* CatchView.swift */; };
 		0D2692982BAB204500B9A9CE /* TryCatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2692972BAB204500B9A9CE /* TryCatchView.swift */; };
 		0D26929B2BAB208300B9A9CE /* TryCatchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26929A2BAB208300B9A9CE /* TryCatchVM.swift */; };
+		0D26929D2BAB61E200B9A9CE /* Breakpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26929C2BAB61E200B9A9CE /* Breakpoint.swift */; };
+		0D2692A02BAB643200B9A9CE /* BreakpointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26929F2BAB643200B9A9CE /* BreakpointView.swift */; };
 		0D30F9192B9EC2CA0060F398 /* AnyPublisherVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F9182B9EC2CA0060F398 /* AnyPublisherVM.swift */; };
 		0D30F91C2B9EC2EE0060F398 /* AnyPublisherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F91B2B9EC2EE0060F398 /* AnyPublisherView.swift */; };
 		0D30F91E2B9F42020060F398 /* CombineLatestVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30F91D2B9F42020060F398 /* CombineLatestVM.swift */; };
@@ -59,6 +61,8 @@
 		0D2692952BAA37EA00B9A9CE /* CatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchView.swift; sourceTree = "<group>"; };
 		0D2692972BAB204500B9A9CE /* TryCatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryCatchView.swift; sourceTree = "<group>"; };
 		0D26929A2BAB208300B9A9CE /* TryCatchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryCatchVM.swift; sourceTree = "<group>"; };
+		0D26929C2BAB61E200B9A9CE /* Breakpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breakpoint.swift; sourceTree = "<group>"; };
+		0D26929F2BAB643200B9A9CE /* BreakpointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakpointView.swift; sourceTree = "<group>"; };
 		0D30F9182B9EC2CA0060F398 /* AnyPublisherVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPublisherVM.swift; sourceTree = "<group>"; };
 		0D30F91B2B9EC2EE0060F398 /* AnyPublisherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPublisherView.swift; sourceTree = "<group>"; };
 		0D30F91D2B9F42020060F398 /* CombineLatestVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineLatestVM.swift; sourceTree = "<group>"; };
@@ -130,6 +134,15 @@
 				0D2692972BAB204500B9A9CE /* TryCatchView.swift */,
 			);
 			path = TryCatch;
+			sourceTree = "<group>";
+		};
+		0D26929E2BAB61E600B9A9CE /* Breakpoint */ = {
+			isa = PBXGroup;
+			children = (
+				0D26929C2BAB61E200B9A9CE /* Breakpoint.swift */,
+				0D26929F2BAB643200B9A9CE /* BreakpointView.swift */,
+			);
+			path = Breakpoint;
 			sourceTree = "<group>";
 		};
 		0D30F91A2B9EC2D60060F398 /* AnyPublisherVM */ = {
@@ -335,6 +348,7 @@
 				0D30F9332BA0EAB10060F398 /* Zip */,
 				0D2692942BAA35E400B9A9CE /* Catch */,
 				0D2692992BAB204900B9A9CE /* TryCatch */,
+				0D26929E2BAB61E600B9A9CE /* Breakpoint */,
 				0DEB25B42B83B1F800B07C08 /* HeaderView.swift */,
 				0DEB25A82B8392C900B07C08 /* Assets.xcassets */,
 				0DEB25AA2B8392C900B07C08 /* Preview Content */,
@@ -430,6 +444,7 @@
 				0DD4969B2B9E10EA00F36A92 /* SinkReceiveVM.swift in Sources */,
 				0D2692932BAA35D700B9A9CE /* CatchVM.swift in Sources */,
 				0DD597A42B98FDA700D43870 /* ReduceViewModel.swift in Sources */,
+				0D26929D2BAB61E200B9A9CE /* Breakpoint.swift in Sources */,
 				0DC176752B98D3CF00C6CEA1 /* CollectByView.swift in Sources */,
 				0DD597B12B9A4D4700D43870 /* OtputAtViewModel.swift in Sources */,
 				0D30F9302BA0D9B20060F398 /* SwitchToLatestView.swift in Sources */,
@@ -460,6 +475,7 @@
 				0DD597AE2B9A4D0600D43870 /* OutputAtView.swift in Sources */,
 				0D30F9322BA0EAA70060F398 /* Zip.swift in Sources */,
 				0DC1767A2B98F09A00C6CEA1 /* IgnoreOutputVM.swift in Sources */,
+				0D2692A02BAB643200B9A9CE /* BreakpointView.swift in Sources */,
 				0DD496942B9D023700F36A92 /* SubscribeOnView.swift in Sources */,
 				0D30F91E2B9F42020060F398 /* CombineLatestVM.swift in Sources */,
 				0DD4968F2B9CF28700F36A92 /* ReceiveOnView.swift in Sources */,

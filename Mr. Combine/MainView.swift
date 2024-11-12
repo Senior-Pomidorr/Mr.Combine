@@ -20,6 +20,9 @@ struct MainView: View {
                 NavigationLink("Timer") {
                     TimerView()
                 }
+                NavigationLink("DataTaskPublisher") {
+                    DataTaskPublisherView()
+                }
                 NavigationLink("Collect") {
                     CollectView()
                 }

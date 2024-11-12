@@ -21,6 +21,19 @@ struct TimerView: View {
                    maximumValueLabel: Image(systemName: "tortoise"),
                    label: { Text("Interval")})
             .padding(.horizontal)
+            
+            HStack {
+                Button("Stop") {
+                    vm.stop()
+                }
+                .frame(maxWidth: .infinity)
+                
+                Button("Start") {
+                    vm.start()
+                }
+                .frame(maxWidth: .infinity)
+            }
+            
             List(vm.data, id: \.self) { datum in
                 Text(datum)
                     .font(.system(.title, design: .monospaced))

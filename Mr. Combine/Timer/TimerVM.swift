@@ -35,6 +35,11 @@ class TimerVM: ObservableObject {
             .sink(receiveValue: { [unowned self] value in
                 data.append(timerFormatter.string(from: value))
             })
-        
+    }
+    
+    func stop() {
+        timerCancellabale?.cancel()
+        intervalCancellable?.cancel()
+        data.removeAll()
     }
 }

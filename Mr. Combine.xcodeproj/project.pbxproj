@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -106,6 +106,12 @@
 		0DEB25B22B839EF900B07C08 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		0DEB25B42B83B1F800B07C08 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C662084E2CE158D3005DAC45 /* Future */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Future; sourceTree = "<group>"; };
+		C66208552CE27926005DAC45 /* PassthroughSubject */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PassthroughSubject; sourceTree = "<group>"; };
+		C662085A2CE3EB82005DAC45 /* Timer */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Timer; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0DEB259E2B8392C700B07C08 /* Frameworks */ = {
@@ -328,6 +334,9 @@
 			children = (
 				0DEB25A42B8392C700B07C08 /* MrCombineApp.swift */,
 				0DC176692B98827300C6CEA1 /* MainView.swift */,
+				C662084E2CE158D3005DAC45 /* Future */,
+				C66208552CE27926005DAC45 /* PassthroughSubject */,
+				C662085A2CE3EB82005DAC45 /* Timer */,
 				0DC1766B2B9882EF00C6CEA1 /* CollectView */,
 				0DC1766E2B9884D900C6CEA1 /* CollectBy */,
 				0DC176732B98CF1A00C6CEA1 /* CollectByTime */,
@@ -378,6 +387,11 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C662084E2CE158D3005DAC45 /* Future */,
+				C66208552CE27926005DAC45 /* PassthroughSubject */,
+				C662085A2CE3EB82005DAC45 /* Timer */,
 			);
 			name = "Mr. Combine";
 			productName = "Mr. Combine";

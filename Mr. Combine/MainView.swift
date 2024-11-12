@@ -11,6 +11,15 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             Form {
+                NavigationLink("Fututre") {
+                    FutureView()
+                }
+                NavigationLink("PassthroughSubject") {
+                    PassthroughSubjectView()
+                }
+                NavigationLink("Timer") {
+                    TimerView()
+                }
                 NavigationLink("Collect") {
                     CollectView()
                 }

@@ -23,6 +23,15 @@ struct MainView: View {
                 NavigationLink("DataTaskPublisher") {
                     DataTaskPublisherView()
                 }
+                NavigationLink("DataTaskPublisherForImages") {
+                    DataTaskPublisherImage()
+                }
+                NavigationLink("Contains(where:)") {
+                    ContainsWhereView()
+                }
+                NavigationLink("TryContains(where:)") {
+                    TryContainsView()
+                }
                 NavigationLink("Collect") {
                     CollectView()
                 }

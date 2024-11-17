@@ -112,6 +112,9 @@
 		C66208552CE27926005DAC45 /* PassthroughSubject */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PassthroughSubject; sourceTree = "<group>"; };
 		C662085A2CE3EB82005DAC45 /* Timer */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Timer; sourceTree = "<group>"; };
 		C662085F2CE3FA7E005DAC45 /* DataTaskPublisher */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DataTaskPublisher; sourceTree = "<group>"; };
+		C66208672CE5167D005DAC45 /* DataTaskPublisherForImages */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DataTaskPublisherForImages; sourceTree = "<group>"; };
+		C662086C2CE643C1005DAC45 /* ContainsWhere */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ContainsWhere; sourceTree = "<group>"; };
+		C66208712CE64C85005DAC45 /* TryContains */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TryContains; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +342,9 @@
 				C66208552CE27926005DAC45 /* PassthroughSubject */,
 				C662085A2CE3EB82005DAC45 /* Timer */,
 				C662085F2CE3FA7E005DAC45 /* DataTaskPublisher */,
+				C66208672CE5167D005DAC45 /* DataTaskPublisherForImages */,
+				C662086C2CE643C1005DAC45 /* ContainsWhere */,
+				C66208712CE64C85005DAC45 /* TryContains */,
 				0DC1766B2B9882EF00C6CEA1 /* CollectView */,
 				0DC1766E2B9884D900C6CEA1 /* CollectBy */,
 				0DC176732B98CF1A00C6CEA1 /* CollectByTime */,
@@ -395,6 +401,9 @@
 				C66208552CE27926005DAC45 /* PassthroughSubject */,
 				C662085A2CE3EB82005DAC45 /* Timer */,
 				C662085F2CE3FA7E005DAC45 /* DataTaskPublisher */,
+				C66208672CE5167D005DAC45 /* DataTaskPublisherForImages */,
+				C662086C2CE643C1005DAC45 /* ContainsWhere */,
+				C66208712CE64C85005DAC45 /* TryContains */,
 			);
 			name = "Mr. Combine";
 			productName = "Mr. Combine";

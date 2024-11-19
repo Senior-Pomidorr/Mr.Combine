@@ -35,6 +35,9 @@ struct MainView: View {
                 NavigationLink("Max") {
                     MaxView()
                 }
+                NavigationLink("TryCompactMap") {
+                    TryCompactMap()
+                }
                 NavigationLink("Collect") {
                     CollectView()
                 }

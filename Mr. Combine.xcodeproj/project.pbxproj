@@ -116,6 +116,7 @@
 		C662086C2CE643C1005DAC45 /* ContainsWhere */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ContainsWhere; sourceTree = "<group>"; };
 		C66208712CE64C85005DAC45 /* TryContains */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TryContains; sourceTree = "<group>"; };
 		C66208762CEA2D6D005DAC45 /* Max */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Max; sourceTree = "<group>"; };
+		C662099B2CED1782005DAC45 /* TryCompactMap */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TryCompactMap; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +348,7 @@
 				C662086C2CE643C1005DAC45 /* ContainsWhere */,
 				C66208712CE64C85005DAC45 /* TryContains */,
 				C66208762CEA2D6D005DAC45 /* Max */,
+				C662099B2CED1782005DAC45 /* TryCompactMap */,
 				0DC1766B2B9882EF00C6CEA1 /* CollectView */,
 				0DC1766E2B9884D900C6CEA1 /* CollectBy */,
 				0DC176732B98CF1A00C6CEA1 /* CollectByTime */,
@@ -407,6 +409,7 @@
 				C662086C2CE643C1005DAC45 /* ContainsWhere */,
 				C66208712CE64C85005DAC45 /* TryContains */,
 				C66208762CEA2D6D005DAC45 /* Max */,
+				C662099B2CED1782005DAC45 /* TryCompactMap */,
 			);
 			name = "Mr. Combine";
 			productName = "Mr. Combine";

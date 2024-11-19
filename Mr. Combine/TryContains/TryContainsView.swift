@@ -3,7 +3,11 @@
 //  Mr. Combine
 //
 //  Created by Daniil Kulikovskiy on 14.11.2024.
-//
+
+
+/* You have the option to look for items in your pipeline and publish a true for the criteria you specify or publish an error for the condition you set.
+   When an item matching your condition is found, a true will then be published and the pipeline will be finished/closed.
+   Alternatively, you can throw an error that will pass the error downstream and complete the pipeline with a failure. The subscriber will ultimately receive a true, false, or error and finish. */
 
 import SwiftUI
 

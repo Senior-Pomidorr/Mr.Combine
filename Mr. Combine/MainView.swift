@@ -32,6 +32,9 @@ struct MainView: View {
                 NavigationLink("TryContains(where:)") {
                     TryContainsView()
                 }
+                NavigationLink("Max") {
+                    MaxView()
+                }
                 NavigationLink("Collect") {
                     CollectView()
                 }

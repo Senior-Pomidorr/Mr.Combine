@@ -32,6 +32,9 @@ struct MainView: View {
                 NavigationLink("TryContains(where:)") {
                     TryContainsView()
                 }
+                NavigationLink("TryFilter") {
+                    TryFilter()
+                }
                 NavigationLink("Max") {
                     MaxView()
                 }
@@ -99,6 +102,8 @@ struct MainView: View {
                     BreakpointView()
                 }
             }
+            .navigationTitle("Mr. Combine")
+            .navigationBarTitleDisplayMode(.large)
         }
     }
 }

@@ -3,7 +3,9 @@
 //  Mr. Combine
 //
 //  Created by Daniil Kulikovskiy on 19.11.2024.
-//
+/*  Just like the compactMap except you are also allowed to throw an error inside the closure provided. This operator lets the pipeline know that a
+ failure is possible. So when you add a sink subscriber, the pipeline will only allow you to add a sink(receiveCompletion:receiveValue:) as
+ it expects you to handle possible failures.  */
 
 import Foundation
 import Combine
@@ -32,7 +34,9 @@ class TryCompactMapVm: ObservableObject {
     }
     
     func simulateError() {
+        dataIn.removeAll()
         self.dataIn.append("Invalid")
+        fetch()
     }
     
     deinit {

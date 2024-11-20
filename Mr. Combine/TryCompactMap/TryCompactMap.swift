@@ -16,7 +16,6 @@ struct TryCompactMap: View {
                        desc: "Use tryCompactMap to remove nils but also have the option to throw an error.")
             Button("Simulate error") {
                 vm.simulateError()
-                vm.fetch()
             }
             List(vm.data, id: \.self) { item in
                 Text(item)

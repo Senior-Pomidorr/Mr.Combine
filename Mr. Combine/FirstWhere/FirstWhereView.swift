@@ -27,7 +27,6 @@ struct FirstWhereView: View {
                         Text(item)
                     }
                 }
-            
             }
             .font(.title)
         }

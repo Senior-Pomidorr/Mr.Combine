@@ -11,6 +11,7 @@ import Combine
 class SetFailureTypeVM: ObservableObject {
     @Published var states: [String] = []
     @Published var error: ErrorForAlert?
+    private var cancellabele: AnyCancellable?
     
     func getPipline(condition: Bool) -> AnyPublisher<String, Error> {
         if condition {
@@ -38,7 +39,7 @@ class SetFailureTypeVM: ObservableObject {
     func fetch(condition: Bool) {
         states.removeAll()
         
-        _ = getPipline(condition: condition)
+        cancellabele = getPipline(condition: condition)
             .sink(receiveCompletion: { [unowned self] completion in
                 if case .failure(let failure) = completion {
                     self.error = failure as? ErrorForAlert
@@ -46,5 +47,9 @@ class SetFailureTypeVM: ObservableObject {
             }, receiveValue: { [unowned self] value in
                 self.states.append(value)
             })
+    }
+    
+    deinit {
+        cancellabele?.cancel()
     }
 }

@@ -33,5 +33,4 @@ final class FirstWhereModel: ObservableObject {
             .replaceEmpty(with: "Nothing found")
             .assign(to: &$firstFound)
     }
-    
 }

@@ -120,6 +120,7 @@
 		C6D15B492CEE711800A56EAC /* TryFilter */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TryFilter; sourceTree = "<group>"; };
 		C6D15B522CEF766600A56EAC /* TryMap */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TryMap; sourceTree = "<group>"; };
 		C6D15B572CEF8F3700A56EAC /* SetFailureType */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SetFailureType; sourceTree = "<group>"; };
+		C6D15B5C2CEFBD2400A56EAC /* TryFirstWhereView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TryFirstWhereView; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +356,7 @@
 				C6D15B492CEE711800A56EAC /* TryFilter */,
 				C6D15B522CEF766600A56EAC /* TryMap */,
 				C6D15B572CEF8F3700A56EAC /* SetFailureType */,
+				C6D15B5C2CEFBD2400A56EAC /* TryFirstWhereView */,
 				0DC1766B2B9882EF00C6CEA1 /* CollectView */,
 				0DC1766E2B9884D900C6CEA1 /* CollectBy */,
 				0DC176732B98CF1A00C6CEA1 /* CollectByTime */,
@@ -419,6 +421,7 @@
 				C6D15B492CEE711800A56EAC /* TryFilter */,
 				C6D15B522CEF766600A56EAC /* TryMap */,
 				C6D15B572CEF8F3700A56EAC /* SetFailureType */,
+				C6D15B5C2CEFBD2400A56EAC /* TryFirstWhereView */,
 			);
 			name = "Mr. Combine";
 			productName = "Mr. Combine";

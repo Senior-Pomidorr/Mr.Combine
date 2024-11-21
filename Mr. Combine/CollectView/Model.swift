@@ -3,7 +3,7 @@
 //  Mr. Combine
 //
 //  Created by Daniil Kulikovskiy on 2/19/24.
-//
+//  The collect operator won’t let items pass through the pipeline. Instead, it will put all items into an array, and then when the pipeline finishes it will publish the array. */
 
 import SwiftUI
 import Combine

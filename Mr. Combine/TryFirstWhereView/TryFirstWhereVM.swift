@@ -27,9 +27,9 @@ class TryFirstWhereVM: ObservableObject {
     }
     
     func findFirst(criteria: String) {
-        deviceList.publisher
+        $criteria
             .tryFirst { value in
-                if value == "Google" {
+                if value.contains("Google") {
                     throw ErrorForAlert()
                 }
                 return value.contains(criteria)

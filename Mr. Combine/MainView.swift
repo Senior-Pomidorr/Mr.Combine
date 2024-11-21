@@ -41,6 +41,12 @@ struct MainView: View {
                 NavigationLink("TryCompactMap") {
                     TryCompactMap()
                 }
+                NavigationLink("TryMap") {
+                    TryMap()
+                }
+                NavigationLink("SetFailureType") {
+                    SetFailureType()
+                }
                 NavigationLink("Collect") {
                     CollectView()
                 }

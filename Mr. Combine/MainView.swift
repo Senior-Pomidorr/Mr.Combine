@@ -68,6 +68,9 @@ struct MainView: View {
                 NavigationLink("TryFirst(where: )") {
                     TryFirstWhereView()
                 }
+                NavigationLink("Output(at: )") {
+                    OutputAtView()
+                }
                 NavigationLink("Output(In: )") {
                     OutputInView()
                 }

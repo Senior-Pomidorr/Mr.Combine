@@ -3,7 +3,7 @@
 //  Mr. Combine
 //
 //  Created by Daniil Kulikovskiy on 3/7/24.
-//
+//  With the output(at:) operator, you can specify an index and when an item at that index comes through the pipeline it will be republished and the pipeline will finish. If you specify a number higher than the number of items that come through the pipeline before it finishes, then nothing is published. (You won’t get any index out-of-bounds errors.) */
 
 import SwiftUI
 

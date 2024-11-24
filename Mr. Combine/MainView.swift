@@ -95,7 +95,7 @@ struct MainView: View {
                 NavigationLink("FlatMap") {
                     FlatMapView()
                 }
-                NavigationLink("MergeView") {
+                NavigationLink("Merge") {
                     MergeView()
                 }
                 NavigationLink("SwitchToLatest") {
@@ -106,6 +106,9 @@ struct MainView: View {
                 }
                 NavigationLink("Try Catch") {
                     TryCatchView()
+                }
+                NavigationLink("Map error") {
+                    MapErrorView()
                 }
                 NavigationLink("Breakpoint") {
                     BreakpointView()

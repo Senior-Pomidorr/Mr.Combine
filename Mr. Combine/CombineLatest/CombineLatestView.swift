@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CombineLatestView: View {
     @StateObject private var vm = CombineLatestVM()
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
@@ -17,6 +18,7 @@ struct CombineLatestView: View {
                            desc: "If you're working with more than two publishers then you will have to keep adding more input parameters into the closure.")
                
                 VStack {
+                    Image(systemName: "\(vm.artData.numbers).circle")
                     Image(vm.artData.artist)
                         .resizable()
                         .scaledToFit()

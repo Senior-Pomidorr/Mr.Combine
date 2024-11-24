@@ -121,6 +121,7 @@
 		C6D15B522CEF766600A56EAC /* TryMap */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TryMap; sourceTree = "<group>"; };
 		C6D15B572CEF8F3700A56EAC /* SetFailureType */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SetFailureType; sourceTree = "<group>"; };
 		C6D15B5C2CEFBD2400A56EAC /* TryFirstWhereView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TryFirstWhereView; sourceTree = "<group>"; };
+		C6D15B632CF3C20200A56EAC /* MapError */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MapError; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +378,7 @@
 				0D30F9332BA0EAB10060F398 /* Zip */,
 				0D2692942BAA35E400B9A9CE /* Catch */,
 				0D2692992BAB204900B9A9CE /* TryCatch */,
+				C6D15B632CF3C20200A56EAC /* MapError */,
 				0D26929E2BAB61E600B9A9CE /* Breakpoint */,
 				0DEB25B42B83B1F800B07C08 /* HeaderView.swift */,
 				0DEB25A82B8392C900B07C08 /* Assets.xcassets */,
@@ -422,6 +424,7 @@
 				C6D15B522CEF766600A56EAC /* TryMap */,
 				C6D15B572CEF8F3700A56EAC /* SetFailureType */,
 				C6D15B5C2CEFBD2400A56EAC /* TryFirstWhereView */,
+				C6D15B632CF3C20200A56EAC /* MapError */,
 			);
 			name = "Mr. Combine";
 			productName = "Mr. Combine";

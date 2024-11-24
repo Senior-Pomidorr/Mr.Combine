@@ -19,7 +19,7 @@ final class Zip: ObservableObject {
     func fetch() {
         _ = artist.publisher
             .zip(colors.publisher) { (artist, color) in
-                return ArtData(artist: artist, color: color)
+                return ArtData(artist: artist, color: color, numbers: 0)
             }
             .sink(receiveValue: { [unowned self] value in
                 dataToVIew.append(value)

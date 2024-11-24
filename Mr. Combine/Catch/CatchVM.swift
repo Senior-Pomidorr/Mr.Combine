@@ -32,4 +32,8 @@ final class CatchVM: ObservableObject {
                 dataToView.append(value)
             })
     }
+    
+    deinit {
+        print("Unloaded Catch_ViewModel")
+    }
 }

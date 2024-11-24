@@ -42,4 +42,8 @@ class TimerVM: ObservableObject {
         intervalCancellable?.cancel()
         data.removeAll()
     }
+    
+    deinit {
+        print("Unloaded Timer_ViewModel")
+    }
 }

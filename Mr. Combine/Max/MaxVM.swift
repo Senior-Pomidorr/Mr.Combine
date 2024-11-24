@@ -35,4 +35,8 @@ class MaxVM: ObservableObject {
         maxString = dataString.max() ?? ""
         maxNumber = dataNumberes.max() ?? 0
     }
+    
+    deinit {
+        print("Unloaded Max_ViewModel")
+    }
 }

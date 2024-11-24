@@ -40,5 +40,6 @@ final class CombineLatestVM: ObservableObject {
     
     deinit {
         cancellable?.cancel()
+        print("Unloaded CombineLatest_ViewModel")
     }
 }

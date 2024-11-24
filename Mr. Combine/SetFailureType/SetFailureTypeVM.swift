@@ -51,5 +51,6 @@ class SetFailureTypeVM: ObservableObject {
     
     deinit {
         cancellabele?.cancel()
+        print("Unloaded SetFailureType_ViewModel")
     }
 }

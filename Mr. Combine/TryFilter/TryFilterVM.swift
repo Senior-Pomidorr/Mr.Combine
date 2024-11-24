@@ -36,4 +36,8 @@ class TryFilterVM: ObservableObject {
             })
     }
     
+    deinit {
+        print("Unloaded TryFilter_ViewModel")
+    }
+    
 }

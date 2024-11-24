@@ -62,5 +62,8 @@ final class OutputInVM: ObservableObject {
             .store(in: &cancellabele)
     }
     
+    deinit {
+        print("Unloaded OutputIn_ViewModel")
+    }
 }
 

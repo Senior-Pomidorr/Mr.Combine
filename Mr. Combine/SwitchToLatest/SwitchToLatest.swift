@@ -47,6 +47,10 @@ final class SwitchToLatest: ObservableObject {
     func removAll() {
         nameResult.removeAll()
     }
+    
+    deinit {
+        print("Unloaded SwitchToLatest_ViewModel")
+    }
 }
     
 

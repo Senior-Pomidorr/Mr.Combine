@@ -35,5 +35,8 @@ final class SubscribeOnVM: ObservableObject {
                 dataToView.append(item)
             }
     }
-
+    
+    deinit {
+        print("Unloaded SubscribeOn_ViewModel")
+    }
 }

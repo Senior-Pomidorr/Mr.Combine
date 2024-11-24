@@ -25,4 +25,8 @@ final class Zip: ObservableObject {
                 dataToVIew.append(value)
             })
     }
+    
+    deinit {
+        print("Unloaded Zip_ViewModel")
+    }
 }

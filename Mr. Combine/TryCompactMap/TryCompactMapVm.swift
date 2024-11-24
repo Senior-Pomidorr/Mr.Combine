@@ -41,5 +41,6 @@ class TryCompactMapVm: ObservableObject {
     
     deinit {
         self.cancellable?.cancel()
+        print("Unloaded TryCompactMap_ViewModel")
     }
 }

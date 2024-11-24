@@ -32,4 +32,7 @@ class FutureVM: ObservableObject {
         }
     }
     
+    deinit {
+        print("Unloaded FutureVm_ViewModel")
+    }
 }

@@ -36,10 +36,9 @@ final class CollectByModel: ObservableObject {
             .sink(receiveValue: { [unowned self] team in
                 teams.append(team)
             })
-        
-        
-        
     }
     
-   
+    deinit {
+        print("Unloaded CollectBy_ViewModel")
+    }
 }

@@ -23,4 +23,8 @@ final class Merge: ObservableObject {
                 dataToView.append(value)
             })
     }
+    
+    deinit {
+        print("Unloaded Merge_ViewModel")
+    }
 }

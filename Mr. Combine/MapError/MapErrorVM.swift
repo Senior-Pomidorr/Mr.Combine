@@ -66,4 +66,7 @@ class MapErrorVM: ObservableObject {
             })
     }
     
+    deinit {
+        print("Unloaded MapError_ViewModel")
+    }
 }

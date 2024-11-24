@@ -28,4 +28,8 @@ final class ReduceViewModel: ObservableObject {
             }
             .assign(to: &$longestAnimalName)
     }
+    
+    deinit {
+        print("Unloaded Reduce_ViewModel")
+    }
 }

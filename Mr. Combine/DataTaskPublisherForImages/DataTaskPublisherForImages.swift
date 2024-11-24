@@ -42,4 +42,8 @@ class DataTaskPublisherForImagesVM: ObservableObject {
             }
             .store(in: &cancellabeles)
     }
+    
+    deinit {
+        print("Unloaded DataTask_ViewModel")
+    }
 }

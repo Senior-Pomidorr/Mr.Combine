@@ -43,5 +43,9 @@ final class CollectByTime: ObservableObject {
         collections.removeAll()
         cancelTimer?.cancel()
     }
+    
+    deinit {
+        print("Unloaded CollectByTime_ViewModel")
+    }
 }
 

@@ -33,6 +33,10 @@ final class AnyPublisherVM: ObservableObject {
             }
             .store(in: &cancellable)
     }
+    
+    deinit {
+        print("Unloaded AnyPublisher_ViewModel")
+    }
 }
 
 

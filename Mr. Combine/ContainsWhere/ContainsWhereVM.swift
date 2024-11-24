@@ -47,4 +47,8 @@ class ContainsWhereVM: ObservableObject {
             }
             .assign(to: &$vitaminC)
     }
+    
+    deinit {
+        print("Unloaded ContainsWhere_ViewModel")
+    }
 }

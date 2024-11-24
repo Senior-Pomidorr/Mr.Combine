@@ -43,4 +43,8 @@ final class FlatMapVM: ObservableObject {
     func removAll() {
         nameResult.removeAll()
     }
+    
+    deinit {
+        print("Unloaded FlatMap_ViewModel")
+    }
 }

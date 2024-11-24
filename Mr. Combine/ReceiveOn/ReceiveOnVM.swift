@@ -43,4 +43,8 @@ final class ReceiveOnVM: ObservableObject {
             }
             .store(in: &cancellabeles)
     }
+    
+    deinit {
+        print("Unloaded ReciveOn_ViewModel")
+    }
 }

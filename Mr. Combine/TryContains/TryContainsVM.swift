@@ -33,6 +33,10 @@ class TryContainsVM: ObservableObject {
                 self.result = value ? "Found" : "NotFound"
             })
     }
+    
+    deinit {
+        print("Unloaded TryContainsWhere_ViewModel")
+    }
 }
 
 extension TryContainsVM {

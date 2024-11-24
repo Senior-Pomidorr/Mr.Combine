@@ -30,4 +30,8 @@ class PassthroughSubjectVM: ObservableObject {
             })
             .assign(to: &$status)
     }
+    
+    deinit {
+        print("Unloaded PassthroughSubjectVM_ViewModel")
+    }
 }

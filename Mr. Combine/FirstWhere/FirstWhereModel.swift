@@ -33,4 +33,8 @@ final class FirstWhereModel: ObservableObject {
             .replaceEmpty(with: "Nothing found")
             .assign(to: &$firstFound)
     }
+    
+    deinit {
+        print("Unloaded FirstWhere_ViewModel")
+    }
 }

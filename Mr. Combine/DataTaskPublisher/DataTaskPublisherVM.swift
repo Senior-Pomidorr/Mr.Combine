@@ -55,4 +55,8 @@ class DataTaskPublisherVM: ObservableObject {
         urlString = "https://jsonplaceholder.typicode.com/posts"
         fetch()
     }
+    
+    deinit {
+        print("Unloaded DATATaskPublisher_ViewModel")
+    }
 }

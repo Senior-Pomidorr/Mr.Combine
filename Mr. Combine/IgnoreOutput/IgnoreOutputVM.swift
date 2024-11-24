@@ -17,7 +17,6 @@ final class IgnoreOutputVM: ObservableObject {
     
     
     func fetch() {
-        
         _ = dataIn.publisher
             .sink { [unowned self] value in
                 dataToView.append(value)
@@ -30,6 +29,10 @@ final class IgnoreOutputVM: ObservableObject {
             }, receiveValue: { [unowned self] value in
                 dataToView2.append("You should not see this")
             })
+    }
+    
+    deinit {
+        print("Unloaded IgnoreOutputVM_ViewModel")
     }
 }
 

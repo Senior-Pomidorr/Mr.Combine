@@ -47,4 +47,7 @@ class TryCatch: ObservableObject {
             .eraseToAnyPublisher()
     }
     
+    deinit {
+        print("Unloaded tryCatch_ViewModel")
+    }
 }

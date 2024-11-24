@@ -40,5 +40,7 @@ final class ViewModel: ObservableObject {
             .assign(to: &$dataToView)
     }
     
-   
+    deinit {
+        print("Unloaded Collect_ViewModel")
+    }
 }

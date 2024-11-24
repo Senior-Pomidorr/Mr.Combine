@@ -38,4 +38,8 @@ final class AssignToVm: ObservableObject {
         }
         return prefix + name
     }
+    
+    deinit {
+        print("Unloaded AssignTo_ViewModel")
+    }
 }

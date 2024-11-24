@@ -43,4 +43,8 @@ final class SinkReceiveVM: ObservableObject {
         aToM.removeAll()
         nToz.removeAll()
     }
+    
+    deinit {
+        print("Unloaded SinkRecive_ViewModel")
+    }
 }

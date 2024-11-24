@@ -45,4 +45,7 @@ class TryFirstWhereVM: ObservableObject {
             .store(in: &cancellables)
     }
     
+    deinit {
+        print("Unloaded TryFirstWhere_ViewModel")
+    }
 }

@@ -39,4 +39,8 @@ class TryMapVM: ObservableObject {
     func simulateError() {
         data.append("Server Error 500")
     }
+    
+    deinit {
+        print("Unloaded TryMap_ViewModel")
+    }
 }

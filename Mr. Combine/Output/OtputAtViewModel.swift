@@ -26,4 +26,8 @@ final class OtputAtViewModel: ObservableObject {
             .output(at: index)
             .assign(to: &$selection)
     }
+    
+    deinit {
+        print("Unloaded Output_ViewModel")
+    }
 }
